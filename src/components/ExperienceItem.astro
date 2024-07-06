@@ -1,0 +1,27 @@
+---
+interface Props {
+	date: string;
+	title?: string;
+	company?: string;
+	description?: string;
+}
+
+const { date, description, title, company } = Astro.props;
+---
+
+<li class='mb-10 ms-4'>
+	<div
+		class='absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white'
+	>
+	</div>
+	<time class='mb-1 text-sm font-normal leading-none text-sky-200/80'>
+		{date}
+	</time>
+	<h3 class='text-lg font-semibold text-yellow-200 mt-2'>
+		{title}
+		<span class='text-yellow-200/70'> {company ? `at ${company}` : ""}</span>
+	</h3>
+	<p class='mb-4 text-base font-normal text-gray-200 text-pretty'>
+		{description}
+	</p>
+</li>

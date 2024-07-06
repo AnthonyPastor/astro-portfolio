@@ -1,0 +1,27 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+	{
+		date: "Current...",
+		title: "Software Developer",
+		company: "Vangwe",
+		description:
+			"Joining thems as a Full Stack developer. Specialize on React and NodeJS.",
+	},
+	{
+		date: "August 2022",
+		title: "Software Developer",
+		company: "Sicfe S.A",
+		description:
+			"All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+	},
+	{
+		date: "December 2019",
+	},
+];
+---
+
+<ol class='relative border-s border-gray-200 dark:border-gray-700 ml-3'>
+	{EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
+</ol>

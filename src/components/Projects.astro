@@ -1,0 +1,66 @@
+---
+import NextjsIcon from "../icons/Nextjs.astro";
+import StrapiIcon from "../icons/Strapi.astro";
+import NodeIcon from "../icons/Nodejs.astro";
+import ReactIcon from "../icons/React.astro";
+
+const TAGS = {
+	NEXT: {
+		name: "Next.js",
+		customClass: "bg-black text-white",
+		icon: NextjsIcon,
+	},
+	STRAPI: {
+		name: "Strapi",
+		customClass: "bg-purple-500/15 border border-1 border-white/30",
+		icon: StrapiIcon,
+	},
+	REACT: {
+		name: "React.js",
+		customClass: "bg-white/20 text-white",
+		icon: ReactIcon,
+	},
+	NODE: {
+		name: "Node.js",
+		customClass: "flex",
+		icon: NodeIcon,
+	},
+};
+
+const PROJECTS = [
+	{
+		title: "Artesania Uruguay",
+		description:
+			"Lead a team to create a blog for show the high-quality handycraft Uruguay has. This portal was requested by the Uruguayan government. It's built with React and Strapi",
+		link: "https://artesaniauruguay.uy/",
+		github: "",
+		image: "projects/artesanias-photo.webp",
+		tags: [TAGS.REACT, TAGS.STRAPI],
+	},
+];
+---
+
+{
+	PROJECTS.map(({ title, description, link, github, image, tags }) => (
+		<article>
+			<h3 class='text-2xl font-semibold text-yellow-200 mb-2 '>{title}</h3>
+			<p class='text-lg my-4'>{description}</p>
+			<ul class='flex gap-x-4 mb-6'>
+				{tags.map((tag) => (
+					<li class=''>
+						<span
+							class={`flex gap-x-2 rounded-full text-sm items-center py-1 px-2 ${tag.customClass}`}
+						>
+							<tag.icon class='size-6' />
+							{tag.name}
+						</span>
+					</li>
+				))}
+			</ul>
+
+			<a href={link || github || "#"} target='_blank' rel='noopener noreferrer'>
+				<img src={image} alt={`Screenshot of project ${title}`} />
+			</a>
+		</article>
+	))
+}
