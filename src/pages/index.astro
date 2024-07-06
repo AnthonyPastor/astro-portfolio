@@ -5,11 +5,14 @@ import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Contact from "../components/Contact.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import Github from "../icons/Github.astro";
 import Mail from "../icons/Mail.astro";
 import Suitcase from "../icons/Suitcase.astro";
 import Rocket from "../icons/Rocket.astro";
+import User from "../icons/User.astro";
 ---
 
 <Layout
@@ -62,12 +65,28 @@ import Rocket from "../icons/Rocket.astro";
 			<Experience />
 		</SectionContainer>
 
-		<SectionContainer id='projects'>
+		<SectionContainer id='projects' class='pb-24'>
 			<h2 class='text-2xl font-semibold mb-8 flex gap-x-2 items-center'>
 				<Rocket class='size-7' /> Projects
 			</h2>
 
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id='about-me' class='pb-24'>
+			<h2 class='text-2xl font-semibold mb-8 flex gap-x-2 items-center'>
+				<User class='size-7' /> About me
+			</h2>
+
+			<AboutMe />
+		</SectionContainer>
+
+		<SectionContainer id='contact'>
+			<h2 class='text-2xl font-semibold mb-8 flex gap-x-2 items-center'>
+				<User class='size-7' /> Say Hi to me!
+			</h2>
+
+			<Contact />
 		</SectionContainer>
 	</main>
 </Layout>

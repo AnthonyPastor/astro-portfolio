@@ -1,0 +1,66 @@
+---
+import { Resend } from "resend";
+
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
+
+if (Astro.request.method === "POST") {
+	try {
+		// Getting posted data from our contact form
+		const data = await Astro.request.formData();
+		const name = data.get("name");
+		const email = data.get("email");
+		const message = data.get("message");
+
+		// TODO: Do not forget to do validation and error handling over received data from your contact form.
+
+		if (!name && !email && !message) {
+			await resend.emails.send({
+				from: "onboarding@resend.dev",
+				to: "npastordominguez@gmail.com",
+				subject: `Contact form submission from ${name} : ${email}`,
+				html: `<p>${message}</p>`,
+			});
+		}
+	} catch (error) {
+		console.error(error);
+	}
+}
+---
+
+<form method='POST'>
+	<div class='flex flex-column md:flex-row gap-6'>
+		<input
+			type='text'
+			name='name'
+			placeholder='Name'
+			class='px-4 py-2 text-md rounded-lg flex-1'
+		/>
+
+		<input
+			type='email'
+			name='email'
+			placeholder='Email'
+			class='px-4 py-2 text-md rounded-lg flex-1'
+		/>
+	</div>
+	<textarea
+		name='message'
+		placeholder='Message'
+		class='my-6 px-4 py-2 text-md rounded-lg w-full'></textarea>
+
+	<div class='flex justify-center'>
+		<button
+			type='submit'
+			class='px-8 py-2 text-lg rounded-full border border-white/10 bg-white/5 hover:scale-110 hover:bg-white/10 transition'
+			>Send</button
+		>
+	</div>
+</form>
+
+<style>
+	textarea {
+		field-sizing: content;
+		min-height: 40px;
+		max-height: 200px;
+	}
+</style>
