@@ -1,0 +1,82 @@
+{
+  "seo": {
+    "title": "Portafolio de Anthony - Desarrollador de Software con +4 años de experiencia",
+    "description": "Contrata a Anthony Pastor para construir tu sitio web o aplicación soñada. Desarrollador de software con más de 5 años de experiencia en la creación de sitios web modernos utilizando tecnologías de vanguardia."
+  },
+  "menu": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "about-me": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "home": {
+    "name": "Hola, soy Anthony",
+    "status": {
+      "available": "Disponible"
+    },
+    "years_of_experience": "+4 años de experiencia.",
+    "main_paragraph": "Desarrollador de Software Full Stack de Montevideo, Uruguay.",
+    "social": {
+      "linkedin": "LinkedIn",
+      "mail": "npastordominguez@gmail.com",
+      "download_cv": "CV"
+    }
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "at": "en",
+    "work_1": {
+      "date": "Presente",
+      "title": "Desarrollador de Software",
+      "company": "Vangwe",
+      "description_1": "Colaboré en equipos de diseño y desarrollo de productos multinacionales. Experto en el ecosistema de JavaScript, con amplia experiencia en React.js y Node.js.",
+      "description_2": "Además, implementé integraciones con pasarelas de pago y servicios como AWS, Firebase y plataformas de redes sociales."
+    },
+    "work_2": {
+      "date": "Agosto de 2022",
+      "title": "Desarrollador de Software",
+      "company": "Sicfe S.A",
+      "description_1": "Contribuí al desarrollo de un sistema de facturación electrónica para Paraguay, construido con el ecosistema .NET.",
+      "description_2": "Este rol full stack incluyó la implementación de integración continua con Azure Pipelines e interacciones con clientes para resolver preguntas y problemas."
+    },
+    "work_3": {
+      "date": "Diciembre de 2019"
+    },
+    "status": {
+      "current": "Presente"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "links": {
+      "code": "Código",
+      "api": "API",
+      "web": "Sitio Web"
+    },
+    "proj_1": {
+      "description": "Lideré un equipo para crear un blog que muestra la alta calidad de las artesanías de Uruguay. Este portal fue encargado por el gobierno uruguayo y se posicionó exitosamente en la parte superior de los resultados de búsqueda de Google."
+    },
+    "proj_2": {
+      "description": "Creé una marca y una Landing page para una empresa metalúrgica uruguaya. Utilizando técnicas avanzadas de SEO, posicioné exitosamente el sitio web entre los mejores resultados de búsqueda de Google, lo que resultó en un aumento del 250% en el volumen de clientes."
+    },
+    "proj_3": {
+      "description": "Proyecto de E-Commerce full stack replicando la tienda de Tesla. Este proyecto se completó como parte del curso DevTalles Next.js."
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "first_paragraph": "Mi nombre es Anthony Pastor, pero mis amigos me llaman Tony. Empecé a programar cuando ingresé a la universidad y desde entonces he estado desarrollando mis habilidades como desarrollador Full Stack 👨🏽‍💻.",
+    "second_paragraph": "He <strong>liderado equipos de desarrollo para sitios web del gobierno uruguayo</strong> y participado en empresas multinacionales. Algunos de mis éxitos incluyen:",
+    "third_paragraph": "• Participé en el diseño e implementación de herramientas que mejoraron los tiempos de homologación de clientes para Sicfe, <strong> reduciendo el proceso de 3 semanas a solo 3 días.</strong> <br /> <br /> • Mejoré la UI & UX de QR Manager, <strong> permitiendo eventos con más de 1000 personas.</strong> <br /><br /> • Creé la marca para una empresa metalúrgica, <strong> aumentando el volumen de clientes en un 250%.</strong>",
+    "fouth_paragraph": "He estudiado música durante varios años y me encantan los deportes con pelota ⚽. En mi tiempo libre, juego ajedrez ♟️ y leo libros 📖.",
+    "fifth_paragraph": "Dato curioso: Me encantan las papas fritas 🍟"
+  },
+  "contact": {
+    "title": "Salúdame!",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar"
+  }
+}

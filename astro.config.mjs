@@ -6,8 +6,14 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-
   integrations: [tailwind()],
   output: "server",
-  adapter: vercel()
+  adapter: vercel(),
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['es', 'en'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });

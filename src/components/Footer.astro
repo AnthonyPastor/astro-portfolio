@@ -1,32 +1,57 @@
+---
+import { getI18N } from "@/i18n";
+
+const navItems = [
+	{
+		label: "home",
+		url: "/#top",
+	},
+	{
+		label: "experience",
+		url: "/#experience",
+	},
+	{
+		label: "projects",
+		url: "/#projects",
+	},
+	{
+		label: "about-me",
+		url: "/#about-me",
+	},
+	{
+		label: "contact",
+		url: "/#about-me",
+	},
+];
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
 <footer
-	class='rounded-lg shadow m-4 bg-black/20 backdrop-blur-lg w-full xl:w-[1120px] mb-10 mt-24 mx-auto px-5'
+	class='rounded-lg shadow bg-black/20 backdrop-blur-lg w-full xl:w-[1120px] mb-10 mt-24 mx-auto px-5'
 >
 	<div
-		class='w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between'
+		class='w-full mx-auto max-w-screen-xl md:flex md:items-center md:justify-between'
 	>
 		<span class='text-sm text-yellow-200/60 sm:text-center'
 			>© 2024 <a href='https://anthony.pastor.dev' class='hover:underline'
 				>Anthony Pastor</a
 			>
 		</span>
-		<ul
-			class='flex flex-wrap items-center gap-4 md:gap-6 mt-3 font-medium sm:mt-0 [&>li>a]:text-xs [&>li>a]:lg:text-sm'
-		>
-			<li>
-				<a href='#top' class='hover:underline'>Home</a>
-			</li>
-			<li>
-				<a href='#experience' class='hover:underline'>Experience</a>
-			</li>
-			<li>
-				<a href='#projects' class='hover:underline'>Projects</a>
-			</li>
-			<li>
-				<a href='#about-me' class='hover:underline'>About me</a>
-			</li>
-			<li>
-				<a href='#contact' class='hover:underline'>Contact</a>
-			</li>
+		<ul class='flex items-center gap-2 md:gap-6 mt-3 font-medium sm:mt-0'>
+			{
+				navItems.map((item) => (
+					<a
+						class='relative block px-2 py-2 transition hover:text-yellow-400 text-xs md:text-sm'
+						aria-label={item.label}
+						href={item.url}
+					>
+						{/* @ts-expect-error */}
+						{i18n.menu[item.label]}
+					</a>
+				))
+			}
 		</ul>
 	</div>
 </footer>
