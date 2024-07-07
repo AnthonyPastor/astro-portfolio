@@ -12,8 +12,10 @@ if (Astro.request.method === "POST") {
 		const message = data.get("message");
 
 		// TODO: Do not forget to do validation and error handling over received data from your contact form.
+		console.log("entra al post");
 
 		if (!name && !email && !message) {
+			console.log("entra al if");
 			await resend.emails.send({
 				from: "onboarding@resend.dev",
 				to: "npastordominguez@gmail.com",
@@ -33,14 +35,14 @@ if (Astro.request.method === "POST") {
 			type='text'
 			name='name'
 			placeholder='Name'
-			class='px-4 py-2 text-md rounded-lg flex-1'
+			class='px-4 py-2 text-md rounded-lg w-full'
 		/>
 
 		<input
 			type='email'
 			name='email'
 			placeholder='Email'
-			class='px-4 py-2 text-md rounded-lg flex-1'
+			class='px-4 py-2 text-md rounded-lg w-full'
 		/>
 	</div>
 	<textarea

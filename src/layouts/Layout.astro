@@ -26,6 +26,7 @@ const { title, description } = Astro.props;
 			class='absolute top-0 z-[-2] h-full w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'
 		>
 		</div>
+
 		<Header />
 		<slot />
 		<Footer />
@@ -45,7 +46,6 @@ const { title, description } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		padding: 0px 20px;
 	}
 
 	@media (prefers-reduce-motion: reduce) {
