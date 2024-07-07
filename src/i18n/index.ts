@@ -12,7 +12,7 @@ const LANGUAGES = {
   }: {
     currentLocale: string | undefined
   }): LangInterface  => {
-    if (currentLocale === LANGUAGES.ENGLISH) return english
-    if (currentLocale === LANGUAGES.SPANISH) return spanish
-    return spanish
+    if (currentLocale === LANGUAGES.ENGLISH) return english as any
+    if (currentLocale === LANGUAGES.SPANISH) return spanish as any
+    return spanish as any
   }
