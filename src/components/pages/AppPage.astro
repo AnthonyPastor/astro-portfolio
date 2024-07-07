@@ -1,0 +1,61 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/shared/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import Experience from "@/components/Experience.astro";
+import Projects from "@/components/Projects.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import Contact from "@/components/Contact.astro";
+import Suitcase from "@/icons/Suitcase.astro";
+import Rocket from "@/icons/Rocket.astro";
+import User from "@/icons/User.astro";
+
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout title={i18n.seo.title} description={i18n.seo.description}>
+	<main class='px-5'>
+		<SectionContainer class='py-16 md:py-36' '>
+			<Hero />
+			<slot />
+		</SectionContainer>
+
+		<SectionContainer id='experience' class='pb-24'>
+			<h2 class='text-2xl font-semibold mb-8 flex gap-x-2 items-center'>
+				<Suitcase class='size-7' />
+				{i18n.experience.title}
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id='projects' class='pb-24'>
+			<h2 class='text-2xl font-semibold mb-8 flex gap-x-2 items-center'>
+				<Rocket class='size-7' />
+				{i18n.projects.title}
+			</h2>
+
+			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id='about-me' class='pb-24'>
+			<h2 class='text-2xl font-semibold mb-8 flex gap-x-2 items-center'>
+				<User class='size-7' />
+				{i18n.about.title}
+			</h2>
+
+			<AboutMe />
+		</SectionContainer>
+
+		<SectionContainer id='contact'>
+			<h2 class='text-2xl font-semibold mb-8 flex gap-x-2 items-center'>
+				<User class='size-7' />
+				{i18n.contact.title}
+			</h2>
+
+			<Contact />
+		</SectionContainer>
+	</main>
+</Layout>

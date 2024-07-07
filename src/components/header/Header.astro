@@ -1,45 +1,49 @@
 ---
+import LenguageSwitcher from "@/components/header/LanguageSwitch.astro";
+import { getI18N } from "@/i18n";
+
 const navItems = [
 	{
-		title: "Experience",
 		label: "experience",
 		url: "/#experience",
 	},
 	{
-		title: "Projects",
 		label: "projects",
 		url: "/#projects",
 	},
 	{
-		title: "About me",
 		label: "about-me",
 		url: "/#about-me",
 	},
 	{
-		title: "Contact",
 		label: "contact",
 		url: "/#about-me",
 	},
 ];
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <header
 	class='fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2'
 >
 	<nav
-		class='flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center'
+		class='flex px-3 text-xs md:text-sm font-medium rounded-full text-gray-200 justify-center items-center'
 	>
 		{
 			navItems.map((link) => (
 				<a
-					class='relative block px-2 py-2 transition hover:text-yellow-400'
+					class='relative block px-2 py-2 transition hover:text-yellow-400 '
 					aria-label={link.label}
 					href={link.url}
 				>
-					{link.title}
+					{/* @ts-expect-error */}
+					{i18n.menu[link.label]}
 				</a>
 			))
 		}
+		<LenguageSwitcher />
 	</nav>
 </header>
 

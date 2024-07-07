@@ -1,0 +1,46 @@
+---
+import ArrowIcon from "@/icons/Arrow.astro";
+import { DEFAULT_LENGUAGE, LOCALES } from "@/i18n/locales.astro";
+
+const { currentLocale = DEFAULT_LENGUAGE, url } = Astro;
+
+const currentLocaleData = LOCALES[currentLocale];
+const otherLocales = Object.values(LOCALES).filter(
+	(locale) => locale.code !== currentLocale
+);
+const currentPath = url.pathname.replace(currentLocaleData.href, "");
+---
+
+<div class='relative inline-block text-left md:ml-6'>
+	<div
+		class='group rounded text-sm font-semibold transition-all hover:bg-gray-800'
+	>
+		<button
+			type='button'
+			class='inline-flex justify-start items-center w-full gap-x-1.5 md:gap-x-2 px-3 py-2 text-xs md:text-sm'
+			aria-expanded='true'
+			aria-haspopup='true'
+		>
+			<currentLocaleData.flag class='size-4' />
+			{currentLocaleData.name}
+			<ArrowIcon class='size-4 -mr-2' />
+		</button>
+		<ul
+			class='group-hover:block group-hover:animate-fade-down group-hover:animate-duration-200 hidden absolute w-full'
+		>
+			{
+				otherLocales.map((locale) => (
+					<li class=''>
+						<a
+							class='rounded hover:bg-gray-800 border-2 -mx-0.5 border-white/10 whitespace-no-wrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
+							href={`${locale.href}${currentPath}`}
+						>
+							<locale.flag class='size-4' />
+							{locale.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>
