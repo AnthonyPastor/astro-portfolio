@@ -1,7 +1,7 @@
 ---
 import "@fontsource-variable/onest";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "@/components/header/Header.astro";
+import Footer from "@/components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
@@ -10,10 +10,12 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const { currentLocale } = Astro;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang={currentLocale}>
 	<head>
 		<meta charset='UTF-8' />
 		<meta name='description' content={description} />
@@ -25,7 +27,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body class='text-white'>
 		<div
-			class='absolute top-0 z-[-2] h-full w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'
+			class='absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'
 		>
 		</div>
 

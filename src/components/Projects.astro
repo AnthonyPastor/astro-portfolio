@@ -1,13 +1,18 @@
 ---
-import LinkButton from "../components/LinkButton.astro";
-import NextjsIcon from "../icons/Nextjs.astro";
-import StrapiIcon from "../icons/Strapi.astro";
-import NodeIcon from "../icons/Nodejs.astro";
-import ReactIcon from "../icons/React.astro";
-import GithubIcon from "../icons/Github.astro";
-import LinkIcon from "../icons/Link.astro";
-import DockerIcon from "../icons/Docker.astro";
-import NestjsIcon from "../icons/Nestjs.astro";
+import LinkButton from "@/components/shared/LinkButton.astro";
+import NextjsIcon from "@/icons/Nextjs.astro";
+import StrapiIcon from "@/icons/Strapi.astro";
+import NodeIcon from "@/icons/Nodejs.astro";
+import ReactIcon from "@/icons/React.astro";
+import GithubIcon from "@/icons/Github.astro";
+import LinkIcon from "@/icons/Link.astro";
+import DockerIcon from "@/icons/Docker.astro";
+import NestjsIcon from "@/icons/Nestjs.astro";
+
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 interface Tag {
 	name: string;
@@ -60,29 +65,26 @@ interface Projects {
 const PROJECTS = [
 	{
 		title: "Artesania Uruguay",
-		description:
-			"Led a team to create a blog showcasing the high-quality handicrafts of Uruguay. This portal was commissioned by the Uruguayan government and successfully positioned the website at the top of Google search results.",
+		description: i18n.projects.proj_1.description,
 		link: "https://artesaniauruguay.uy/",
-		image: "projects/artesanias.webp",
+		image: "/projects/artesanias.webp",
 		tags: [TAGS.REACT, TAGS.STRAPI],
 	},
 	{
 		title: "Marcelo Coronato Metalurgia",
-		description:
-			"Created a brand and landing page for a Uruguayan metallurgy company. Utilizing advanced SEO techniques, successfully positioned the website among the top Google search results, resulting in a 250% increase in client volume.",
+		description: i18n.projects.proj_2.description,
 		link: "https://www.marcelocoronatometalurgia.com/",
 
-		image: "projects/coronato.webp",
+		image: "/projects/coronato.webp",
 		tags: [TAGS.REACT, TAGS.NEXT],
 	},
 	{
 		title: "Teslo Shop",
-		description:
-			"Full stack E-commerce project replicating the Tesla store. This project was completed as part of the DevTalles Next.js course.",
+		description: i18n.projects.proj_3.description,
 		link: "https://teslo-shop-ap.vercel.app/",
 		github: "https://github.com/AnthonyPastor/teslo-shop-ap",
 		github2: "https://github.com/AnthonyPastor/product-rest-api",
-		image: "projects/teslo-shop.webp",
+		image: "/projects/teslo-shop.webp",
 		tags: [TAGS.REACT, TAGS.NEXT, TAGS.NEST, TAGS.DOCKER],
 	},
 ];
@@ -117,19 +119,19 @@ const PROJECTS = [
 				{github && (
 					<LinkButton href={github}>
 						<GithubIcon class='size-6' />
-						Code
+						{i18n.projects.links.code}
 					</LinkButton>
 				)}
 				{github2 && (
 					<LinkButton href={github2}>
 						<GithubIcon class='size-6' />
-						API
+						{i18n.projects.links.api}
 					</LinkButton>
 				)}
 				{link && (
 					<LinkButton href={link}>
 						<LinkIcon class='size-5' />
-						Preview
+						{i18n.projects.links.web}
 					</LinkButton>
 				)}
 			</footer>

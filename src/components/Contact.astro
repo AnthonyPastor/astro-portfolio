@@ -1,5 +1,9 @@
 ---
 import { Resend } from "resend";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
@@ -10,8 +14,6 @@ if (Astro.request.method === "POST") {
 		const name = data.get("name");
 		const email = data.get("email");
 		const message = data.get("message");
-
-		// TODO: Do not forget to do validation and error handling over received data from your contact form.
 
 		if (name && email && message) {
 			await resend.emails.send({
@@ -32,27 +34,27 @@ if (Astro.request.method === "POST") {
 		<input
 			type='text'
 			name='name'
-			placeholder='Name'
+			placeholder={i18n.contact.name}
 			class='px-4 py-2 text-md rounded-lg w-full bg-white/10'
 		/>
 
 		<input
 			type='email'
 			name='email'
-			placeholder='Email'
+			placeholder={i18n.contact.email}
 			class='px-4 py-2 text-md rounded-lg w-full bg-white/10'
 		/>
 	</div>
 	<textarea
 		name='message'
-		placeholder='Message'
+		placeholder={i18n.contact.message}
 		class='my-6 px-4 py-2 text-md rounded-lg w-full bg-white/10'></textarea>
 
 	<div class='flex justify-center'>
 		<button
 			type='submit'
 			class='px-8 py-2 text-lg rounded-full border border-white/10 bg-white/5 hover:scale-110 hover:bg-white/10 transition'
-			>Send</button
+			>{i18n.contact.send}</button
 		>
 	</div>
 </form>

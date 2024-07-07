@@ -1,0 +1,82 @@
+{
+    "seo": {
+      "title": "Anthony's portfolio - Software Dev with +4 years of experience",
+      "description": "Hire Anthony Pastor to build your dream website or application. Experienced software developer with over 5 years of expertise in creating modern websites using cutting-edge technologies."
+    },
+    "menu": {
+        "home": "Home",
+        "experience": "Experience",
+        "projects": "Projects",
+        "about-me": "About me",
+        "contact": "Contact"
+    },
+    "home": {
+      "name": "Hey, I am Anthony",
+      "status": {
+        "available": "Available"
+      },
+      "years_of_experience": "+4 years of experience.",
+      "main_paragraph": "Full Stack Software Developer from Montevideo, Uruguay.",
+      "social": {
+        "linkedin": "LinkedIn",
+        "mail": "npastordominguez@gmail.com",
+        "download_cv": "CV"
+      }
+    },
+    "experience": {
+      "title": "Work Experience",
+      "at": "at",
+      "work_1": {
+        "date": "Present",
+        "title": "Software Developer",
+        "company": "Vangwe",
+        "description_1": "Collaborated in multinational product design and development teams. Proficient in the JavaScript ecosystem, with extensive experience in React.js and Node.js.",
+        "description_2": "Additionally, implemented payment gateway integrations, and integrations with AWS, Firebase, and social media platforms."
+      },
+      "work_2": {
+        "date": "August 2022",
+        "title": "Software Developer",
+        "company": "Sicfe S.A",
+        "description_1": "Contributed to the development of an electronic invoicing system for Paraguay, built with the .NET ecosystem.",
+        "description_2": "This full stack role involved implementing continuous integration with Azure Pipelines and client interactions to address questions and resolve issues."
+      },
+      "work_3": {
+        "date": "December 2019"       
+      },
+      "status": {
+        "current": "Present"
+      }
+    },
+    "projects": {
+      "title": "Projects",
+      "links": {
+        "code": "Code",
+        "api": "API",
+        "web": "Website"
+      },
+      "proj_1":{
+        "description": "Led a team to create a blog showcasing the high-quality handicrafts of Uruguay. This portal was commissioned by the Uruguayan government and successfully positioned the website at the top of Google search results."
+      },
+      "proj_2":{
+        "description": "Created a brand and landing page for a Uruguayan metallurgy company. Utilizing advanced SEO techniques, successfully positioned the website among the top Google search results, resulting in a 250% increase in client volume."
+      },
+      "proj_3":{
+        "description": "Full stack E-commerce project replicating the Tesla store. This project was completed as part of the DevTalles Next.js course."
+      }
+    },
+    "about": {
+      "title": "About me",
+      "first_paragraph": "My name is Anthony Pastor, but my friends call me Tony. I started programming when I entered university, and since then, I have been developing my skills as a Full Stack developer 👨🏽‍💻.",
+      "second_paragraph": "I have <strong>led development teams for websites for the Uruguayan government</strong> and participated in multinational companies. Some of my successes include:",
+      "third_paragraph": "• Participated in the design and implementation of tools that improved the client homologation times for Sicfe,<strong> reducing the process from 3 weeks to just 3 days.</strong> <br /> <br /> • Improved the UI & UX of QR Manager, <strong> enabling events with +1000 of attendees.</strong> <br /><br /> • Created the brand for a metallurgy company,<strong> increasing the customer volume by 250%.</strong>",
+      "fouth_paragraph": "I have studied music for several years and I love ball sports ⚽. In my free time, I play chess ♟️ and read books 📖.",
+      "fifth_paragraph": "Fun fact: I love chips 🍟"
+    },
+    "contact": {
+      "title": "Say Hi to me!",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    }
+  }
