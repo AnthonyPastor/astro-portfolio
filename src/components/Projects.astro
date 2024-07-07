@@ -1,10 +1,21 @@
 ---
+import LinkButton from "../components/LinkButton.astro";
 import NextjsIcon from "../icons/Nextjs.astro";
 import StrapiIcon from "../icons/Strapi.astro";
 import NodeIcon from "../icons/Nodejs.astro";
 import ReactIcon from "../icons/React.astro";
+import GithubIcon from "../icons/Github.astro";
+import LinkIcon from "../icons/Link.astro";
+import DockerIcon from "../icons/Docker.astro";
+import NestjsIcon from "../icons/Nestjs.astro";
 
-const TAGS = {
+interface Tag {
+	name: string;
+	customClass?: string;
+	icon: (_props: Record<string, any>) => any;
+}
+
+const TAGS: { [key: string]: Tag } = {
 	NEXT: {
 		name: "Next.js",
 		customClass: "bg-black text-white",
@@ -22,32 +33,69 @@ const TAGS = {
 	},
 	NODE: {
 		name: "Node.js",
-		customClass: "flex",
 		icon: NodeIcon,
 	},
+	DOCKER: {
+		name: "Docker",
+		customClass: "bg-blue-500/20 border border-1 border-white/30",
+		icon: DockerIcon,
+	},
+	NEST: {
+		name: "Nest.js",
+		customClass: "bg-red-500/20 border border-1 border-white/30",
+		icon: NestjsIcon,
+	},
 };
+
+interface Projects {
+	titles: String;
+	description: String;
+	link: String;
+	github?: String;
+	github2?: String;
+	image: String;
+	tags: Tag[];
+}
 
 const PROJECTS = [
 	{
 		title: "Artesania Uruguay",
 		description:
-			"Lead a team to create a blog for show the high-quality handycraft Uruguay has. This portal was requested by the Uruguayan government. It's built with React and Strapi",
+			"Led a team to create a blog showcasing the high-quality handicrafts of Uruguay. This portal was commissioned by the Uruguayan government and successfully positioned the website at the top of Google search results.",
 		link: "https://artesaniauruguay.uy/",
-		github: "",
-		image: "projects/artesanias-photo.webp",
+		image: "projects/artesanias.webp",
 		tags: [TAGS.REACT, TAGS.STRAPI],
+	},
+	{
+		title: "Marcelo Coronato Metalurgia",
+		description:
+			"Created a brand and landing page for a Uruguayan metallurgy company. Utilizing advanced SEO techniques, successfully positioned the website among the top Google search results, resulting in a 250% increase in client volume.",
+		link: "https://www.marcelocoronatometalurgia.com/",
+
+		image: "projects/coronato.webp",
+		tags: [TAGS.REACT, TAGS.NEXT],
+	},
+	{
+		title: "Teslo Shop",
+		description:
+			"Full stack E-commerce project replicating the Tesla store. This project was completed as part of the DevTalles Next.js course.",
+		link: "https://teslo-shop-ap.vercel.app/",
+		github: "https://github.com/AnthonyPastor/teslo-shop-ap",
+		github2: "https://github.com/AnthonyPastor/product-rest-api",
+		image: "projects/teslo-shop.webp",
+		tags: [TAGS.REACT, TAGS.NEXT, TAGS.NEST, TAGS.DOCKER],
 	},
 ];
 ---
 
 {
-	PROJECTS.map(({ title, description, link, github, image, tags }) => (
-		<article>
+	PROJECTS.map(({ title, description, link, github, github2, image, tags }) => (
+		<article class='mb-24'>
 			<h3 class='text-2xl font-semibold text-yellow-200 mb-2 '>{title}</h3>
 			<p class='text-lg my-4'>{description}</p>
-			<ul class='flex gap-x-4 mb-6'>
+			<ul class='flex gap-x-4 gap-y-2 mb-6 flex-wrap'>
 				{tags.map((tag) => (
-					<li class=''>
+					<li>
 						<span
 							class={`flex gap-x-2 rounded-full text-sm items-center py-1 px-2 ${tag.customClass}`}
 						>
@@ -58,9 +106,33 @@ const PROJECTS = [
 				))}
 			</ul>
 
-			<a href={link || github || "#"} target='_blank' rel='noopener noreferrer'>
-				<img src={image} alt={`Screenshot of project ${title}`} />
-			</a>
+			<img
+				src={image}
+				alt={`Screenshot of project ${title}`}
+				loading='lazy'
+				class='rounded shadow-2xl shodow-white/10 aspect-video'
+			/>
+
+			<footer class='mt-4 flex gap-x-4 items-center'>
+				{github && (
+					<LinkButton href={github}>
+						<GithubIcon class='size-6' />
+						Code
+					</LinkButton>
+				)}
+				{github2 && (
+					<LinkButton href={github2}>
+						<GithubIcon class='size-6' />
+						API
+					</LinkButton>
+				)}
+				{link && (
+					<LinkButton href={link}>
+						<LinkIcon class='size-5' />
+						Preview
+					</LinkButton>
+				)}
+			</footer>
 		</article>
 	))
 }

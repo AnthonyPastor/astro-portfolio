@@ -1,15 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import SocialPill from "../components/SocialPill.astro";
+import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Contact from "../components/Contact.astro";
-import LinkedIn from "../icons/LinkedIn.astro";
-import Github from "../icons/Github.astro";
-import Mail from "../icons/Mail.astro";
 import Suitcase from "../icons/Suitcase.astro";
 import Rocket from "../icons/Rocket.astro";
 import User from "../icons/User.astro";
@@ -20,42 +16,9 @@ import User from "../icons/User.astro";
 	description='Hire Anthony Pastor to build your dream website or application. Experienced software developer with over 5 years of expertise in creating modern websites using cutting-edge technologies.'
 >
 	<main class='px-5'>
-		<SectionContainer class='pt-44 pb-24'>
-			<img
-				src='photo.webp'
-				alt='Anthony photo'
-				class='rounded-full size-12 overflow-hidden object-center object-cover'
-			/>
-			<h1
-				class='text-white text-3xl lg:text-5xl font-bold flex flex-row pb-6 lg:pb-10 pt-4 gap-x-4'
-			>
-				Hey, I am Anthony <a
-					href='https://www.linkedin.com/in/anthony-pastor/'
-					target='_blank'
-					rel='noopener'
-					class='flex justify-center items-center'
-				>
-					<Badge> Available to work </Badge>
-				</a>
-			</h1>
-			<h2 class='text-xl lg:text-2xl text-wrap'>
-				<span>+4 years of experience.</span>
-				<span class='opacity-80'
-					>Full Stack Software Developer from Montevideo, Uruguay.</span
-				>
-			</h2>
-
-			<nav class='flex gap-4 mt-8 flex-wrap'>
-				<SocialPill link='https://www.linkedin.com/in/anthony-pastor/'>
-					<LinkedIn class='size-4 lg:size-6' /> LinkedIn
-				</SocialPill>
-				<SocialPill link='https://github.com/AnthonyPastor'>
-					<Github class='size-4 lg:size-6' /> Github
-				</SocialPill>
-				<SocialPill link='mailto:npastordominguez@gmail.com'>
-					<Mail class='size-4 lg:size-6' /> npastordominguez@gmail.com
-				</SocialPill>
-			</nav>
+		<SectionContainer class='py-16 md:py-36' '>
+			<Hero />
+			<slot />
 		</SectionContainer>
 
 		<SectionContainer id='experience' class='pb-24'>

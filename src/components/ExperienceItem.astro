@@ -3,7 +3,7 @@ interface Props {
 	date: string;
 	title?: string;
 	company?: string;
-	description?: string;
+	description?: string[];
 }
 
 const { date, description, title, company } = Astro.props;
@@ -21,7 +21,9 @@ const { date, description, title, company } = Astro.props;
 		{title}
 		<span class='text-yellow-200/70'> {company ? `at ${company}` : ""}</span>
 	</h3>
-	<p class='mb-4 text-base font-normal text-gray-200 text-pretty'>
-		{description}
-	</p>
+	{
+		description?.map((desc) => (
+			<p class='mb-4 text-base font-normal text-gray-200 text-pretty'>{desc}</p>
+		))
+	}
 </li>

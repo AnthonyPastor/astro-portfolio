@@ -1,0 +1,47 @@
+---
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import CVIcon from "../icons/CV.astro";
+import Mail from "../icons/Mail.astro";
+---
+
+<div class='max-w-xl'>
+	<div class='flex gap-4 mb-4 lg:mb-12'>
+		<img
+			src='photo.webp'
+			alt='Anthony photo'
+			class='rounded-full size-24 md:size-12 overflow-hidden object-center object-cover'
+		/>
+		<a
+			href='https://www.linkedin.com/in/anthony-pastor/'
+			target='_blank'
+			rel='noopener'
+			role='link'
+			class='flex items-center transition md:justify-center md:hover:scale-105'
+		>
+			<Badge> Available to work </Badge>
+		</a>
+	</div>
+	<h1 class='text-4xl font-bold tracking-tight sm:text-5xl text-white'>
+		Hey, I am Anthony
+	</h1>
+	<p
+		class='mt-6 text-xl [&>strong]:text-yellow-200 [&>strong]:font-semibold text-gray-300'
+	>
+		<strong>+4 years of experience.</strong>
+		<span>Full Stack Software Developer from Montevideo, Uruguay.</span>
+	</p>
+
+	<nav class='flex gap-4 mt-8 flex-wrap'>
+		<SocialPill link='https://www.linkedin.com/in/anthony-pastor/'>
+			<LinkedIn class='size-4 lg:size-6' /> LinkedIn
+		</SocialPill>
+		<SocialPill link='CV.pdf' downloadName='AnthonyPastor_CV.pdf'>
+			<CVIcon class='size-4 lg:size-6' /> CV
+		</SocialPill>
+		<SocialPill link='mailto:npastordominguez@gmail.com'>
+			<Mail class='size-4 lg:size-6' /> npastordominguez@gmail.com
+		</SocialPill>
+	</nav>
+</div>
