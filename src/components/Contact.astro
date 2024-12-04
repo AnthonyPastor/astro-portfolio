@@ -15,14 +15,14 @@ if (Astro.request.method === "POST") {
 		const email = data.get("email");
 		const message = data.get("message");
 
-		if (name && email && message) {
-			await resend.emails.send({
-				from: "onboarding@resend.dev",
-				to: "npastordominguez@gmail.com",
-				subject: `Contact form submission from ${name} : ${email}`,
-				html: `<p>${message}</p>`,
-			});
-		}
+		// if (name && email && message) {
+		// 	await resend.emails.send({
+		// 		from: "onboarding@resend.dev",
+		// 		to: "npastordominguez@gmail.com",
+		// 		subject: `Contact form submission from ${name} : ${email}`,
+		// 		html: `<p>${message}</p>`,
+		// 	});
+		// }
 	} catch (error) {
 		console.error(error);
 	}
