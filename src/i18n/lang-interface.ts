@@ -7,8 +7,7 @@ export interface LangInterface {
         "home": string,
         "experience": string,
         "projects": string,
-        "about-me": string,
-        "contact":string
+        "about-me": string
     },
     home: {
       "name": string,
@@ -78,12 +77,5 @@ export interface LangInterface {
       "third_paragraph": string,
       "forth_paragraph": string,
       "fifth_paragraph": string,
-    }
-    contact: {
-      "title": string,
-      "name": string,
-      "email": string,
-      "message": string,
-      "send": string,
     }
   }

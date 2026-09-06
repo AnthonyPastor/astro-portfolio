@@ -5,7 +5,6 @@ import Hero from "@/components/Hero.astro";
 import Experience from "@/components/Experience.astro";
 import Projects from "@/components/Projects.astro";
 import AboutMe from "@/components/AboutMe.astro";
-import Contact from "@/components/Contact.astro";
 import Suitcase from "@/icons/Suitcase.astro";
 import Rocket from "@/icons/Rocket.astro";
 import User from "@/icons/User.astro";
@@ -47,15 +46,6 @@ const i18n = getI18N({ currentLocale });
 			</h2>
 
 			<AboutMe />
-		</SectionContainer>
-
-		<SectionContainer id='contact'>
-			<h2 class='text-2xl font-semibold mb-8 flex gap-x-2 items-center'>
-				<User class='size-7' />
-				{i18n.contact.title}
-			</h2>
-
-			<Contact />
 		</SectionContainer>
 	</main>
 </Layout>
