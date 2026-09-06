@@ -1,21 +1,20 @@
 {
 	"seo": {
-		"title": "Portafolio de Anthony - Desarrollador de Software con +4 años de experiencia",
+		"title": "Portafolio de Anthony - Desarrollador de Software con +{{years}} años de experiencia",
 		"description": "Contrata a Anthony Pastor para construir tu sitio web o aplicación soñada. Desarrollador de software con más de 5 años de experiencia en la creación de sitios web modernos utilizando tecnologías de vanguardia."
 	},
 	"menu": {
 		"home": "Inicio",
 		"experience": "Experiencia",
 		"projects": "Proyectos",
-		"about-me": "Sobre mí",
-		"contact": "Contacto"
+		"about-me": "Sobre mí"
 	},
 	"home": {
 		"name": "Hola, soy Anthony",
 		"status": {
 			"available": "Disponible"
 		},
-		"years_of_experience": "+6 años de experiencia.",
+		"years_of_experience": "+{{years}} años de experiencia como Ingeniero de Software.",
 		"main_paragraph": "Desarrollador de Software Full Stack de Montevideo, Uruguay.",
 		"social": {
 			"linkedin": "LinkedIn",
@@ -71,12 +70,5 @@
 		"third_paragraph": "• Participé en el diseño e implementación de herramientas que mejoraron los tiempos de homologación de clientes para Sicfe, <strong> reduciendo el proceso de 3 semanas a solo 3 días.</strong> <br /> <br /> • Mejoré la UI & UX de QR Manager, <strong> permitiendo eventos con más de 1000 personas.</strong> <br /><br /> • Creé la marca para una empresa metalúrgica, <strong> aumentando el volumen de clientes en un 250%.</strong>",
 		"fouth_paragraph": "He estudiado música durante varios años y me encantan los deportes con pelota ⚽. En mi tiempo libre, juego ajedrez ♟️ y leo libros 📖.",
 		"fifth_paragraph": "Dato curioso: Me encantan las papas fritas 🍟"
-	},
-	"contact": {
-		"title": "Salúdame!",
-		"name": "Nombre",
-		"email": "Correo",
-		"message": "Mensaje",
-		"send": "Enviar"
 	}
 }

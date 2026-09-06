@@ -1,21 +1,20 @@
 {
 	"seo": {
-		"title": "Anthony's portfolio - Software Dev with +4 years of experience",
+		"title": "Anthony's portfolio - Software Dev with +{{years}} years of experience",
 		"description": "Hire Anthony Pastor to build your dream website or application. Experienced software developer with over 5 years of expertise in creating modern websites using cutting-edge technologies."
 	},
 	"menu": {
 		"home": "Home",
 		"experience": "Experience",
 		"projects": "Projects",
-		"about-me": "About me",
-		"contact": "Contact"
+		"about-me": "About me"
 	},
 	"home": {
 		"name": "Hey, I am Anthony",
 		"status": {
 			"available": "Available"
 		},
-		"years_of_experience": "+6 years of experience.",
+		"years_of_experience": "+{{years}} years of experience as a Software Engineer.",
 		"main_paragraph": "Full Stack Software Developer from Montevideo, Uruguay.",
 		"social": {
 			"linkedin": "LinkedIn",
@@ -71,12 +70,5 @@
 		"third_paragraph": "• Participated in the design and implementation of tools that improved the client homologation times for Sicfe,<strong> reducing the process from 3 weeks to just 3 days.</strong> <br /> <br /> • Improved the UI & UX of QR Manager, <strong> enabling events with +1000 of attendees.</strong> <br /><br /> • Created the brand for a metallurgy company,<strong> increasing the customer volume by 250%.</strong>",
 		"fouth_paragraph": "I have studied music for several years and I love ball sports ⚽. In my free time, I play chess ♟️ and read books 📖.",
 		"fifth_paragraph": "Fun fact: I love chips 🍟"
-	},
-	"contact": {
-		"title": "Say Hi to me!",
-		"name": "Name",
-		"email": "Email",
-		"message": "Message",
-		"send": "Send"
 	}
 }

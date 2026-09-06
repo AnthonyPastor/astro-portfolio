@@ -18,14 +18,11 @@ const navItems = [
 		label: "about-me",
 		url: "/#about-me",
 	},
-	{
-		label: "contact",
-		url: "/#about-me",
-	},
 ];
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -35,7 +32,7 @@ const i18n = getI18N({ currentLocale });
 		class='w-full mx-auto max-w-screen-xl md:flex md:items-center md:justify-between'
 	>
 		<span class='text-sm text-yellow-200/60 sm:text-center'
-			>© 2024 <a href='https://anthony.pastor.dev' class='hover:underline'
+			>© {currentYear} <a href='https://anthony.pastor.dev' class='hover:underline'
 				>Anthony Pastor</a
 			>
 		</span>
