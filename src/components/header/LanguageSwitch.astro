@@ -13,7 +13,7 @@ const currentPath = url.pathname.replace(currentLocaleData.href, "");
 
 <div class='relative inline-block text-left md:ml-6'>
 	<div
-		class='group rounded text-sm font-semibold transition-all hover:bg-gray-800'
+		class='group rounded-sm text-sm font-semibold transition-all hover:bg-gray-800'
 	>
 		<button
 			type='button'
@@ -32,7 +32,7 @@ const currentPath = url.pathname.replace(currentLocaleData.href, "");
 				otherLocales.map((locale) => (
 					<li class=''>
 						<a
-							class='rounded hover:bg-gray-800 border-2 -mx-0.5 border-white/10 whitespace-no-wrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
+							class='rounded-sm hover:bg-gray-800 border-2 -mx-0.5 border-white/10 whitespace-no-wrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
 							href={`${locale.href}${currentPath}`}
 						>
 							<locale.flag class='size-4' />
