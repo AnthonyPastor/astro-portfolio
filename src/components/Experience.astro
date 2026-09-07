@@ -1,25 +1,53 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
+import SectionHeading from "@/components/shared/SectionHeading.astro";
 import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
 const EXPERIENCE = [
-	i18n.experience.work_1,
-	i18n.experience.work_2,
-	i18n.experience.work_3,
+	{
+		variant: "current" as const,
+		date: i18n.experience.work_1.date,
+		title: i18n.experience.work_1.title,
+		companyAt: i18n.experience.work_1.company_at,
+		paragraph1: i18n.experience.work_1.paragraph_1,
+		paragraph2: i18n.experience.work_1.paragraph_2,
+		tags: ["Fintech", "Proptech", "Mobile", i18n.experience.chip_payments],
+	},
+	{
+		variant: "past" as const,
+		date: i18n.experience.work_2.date,
+		title: i18n.experience.work_2.title,
+		companyAt: i18n.experience.work_2.company_at,
+		paragraph1: i18n.experience.work_2.paragraph_1,
+		paragraph2: i18n.experience.work_2.paragraph_2,
+		tags: [i18n.experience.chip_einvoicing, ".NET", "CI/CD"],
+	},
 ];
 ---
 
-<ol class='relative border-s border-gray-700 ml-3'>
-	{
-		EXPERIENCE.map((experience) => (
-			<ExperienceItem
-				at={i18n.experience.at}
-				{...experience}
-				description={[experience.description_1, experience.description_2]}
-			/>
-		))
-	}
+<SectionHeading title={i18n.experience.title} subtitle={i18n.experience.subtitle} />
+<ol class='relative ms-3'>
+	<span
+		class='absolute left-[1px] top-1.5 bottom-1.5 w-0.5 rounded-full'
+		style='background: linear-gradient(180deg, oklch(0.85 0.13 195 / 0.9), oklch(0.72 0.15 275 / 0.6) 55%, oklch(1 0 0 / 0.06));'
+	></span>
+	{EXPERIENCE.map((item, index) => <ExperienceItem {...item} revealStep={index + 1} />)}
+	<li class='relative ms-6'>
+		<span
+			class='absolute -left-[1.85rem] top-1 size-3 rounded-full border border-[oklch(1_0_0/0.2)] box-border'
+			style='background: oklch(0.4 0.01 260);'
+		>
+		</span>
+		<div class='rounded-[20px] border border-dashed border-[var(--border-2)] px-7 py-4.5'>
+			<p
+				class='text-[13px] text-[var(--text-3)] [font-family:var(--font-mono)]'
+				data-reveal='3'
+			>
+				{i18n.experience.origin}
+			</p>
+		</div>
+	</li>
 </ol>

@@ -1,54 +1,48 @@
 ---
 import { getI18N } from "@/i18n";
+import { DEFAULT_LENGUAGE, LOCALES } from "@/i18n/locales.astro";
 
 const navItems = [
-	{
-		label: "home",
-		url: "/#top",
-	},
-	{
-		label: "experience",
-		url: "/#experience",
-	},
-	{
-		label: "projects",
-		url: "/#projects",
-	},
-	{
-		label: "about-me",
-		url: "/#about-me",
-	},
+	{ label: "home", target: "hero" },
+	{ label: "experience", target: "experience" },
+	{ label: "projects", target: "projects" },
+	{ label: "about-me", target: "about-me" },
 ];
 
-const { currentLocale } = Astro;
+const { currentLocale = DEFAULT_LENGUAGE } = Astro;
 const i18n = getI18N({ currentLocale });
 const currentYear = new Date().getFullYear();
+const localeHref = LOCALES[currentLocale]?.href ?? "";
 ---
 
-<footer
-	class='rounded-lg shadow-sm bg-black/20 backdrop-blur-lg w-full xl:w-[1120px] mb-10 mt-24 mx-auto px-5'
->
-	<div
-		class='w-full mx-auto max-w-screen-xl md:flex md:items-center md:justify-between'
-	>
-		<span class='text-sm text-yellow-200/60 sm:text-center'
-			>© {currentYear} <a href='https://anthony.pastor.dev' class='hover:underline'
-				>Anthony Pastor</a
-			>
+<footer class='footer-bar w-full max-w-[1120px] mx-auto px-5 lg:px-6 pt-7 pb-11 box-border'>
+	<div class='flex w-full flex-col items-center gap-5 md:flex-row md:justify-between'>
+		<span class='text-[13px] text-[oklch(0.55_0.01_260)] [font-family:var(--font-mono)]'>
+			© {currentYear}{" "}
+			<a href={`${localeHref}/`} class='transition hover:text-[var(--fg)]'>Anthony Pastor</a>
+			{" "}· {i18n.footer.location}
 		</span>
-		<ul class='flex items-center gap-2 md:gap-6 mt-3 font-medium sm:mt-0'>
+		<ul class='flex items-center gap-2 m-0 p-0 list-none'>
 			{
 				navItems.map((item) => (
-					<a
-						class='relative block px-2 py-2 transition hover:text-yellow-400 text-xs md:text-sm'
-						aria-label={item.label}
-						href={item.url}
-					>
-						{/* @ts-expect-error */}
-						{i18n.menu[item.label]}
-					</a>
+					<li>
+						<a
+							class='block px-2.5 py-1.5 text-[14px] text-[oklch(0.65_0.01_260)] transition hover:text-[var(--fg)]'
+							aria-label={item.label}
+							href={`${localeHref}/#${item.target}`}
+						>
+							{/* @ts-expect-error */}
+							{i18n.menu[item.label]}
+						</a>
+					</li>
 				))
 			}
 		</ul>
 	</div>
 </footer>
+
+<style>
+	.footer-bar {
+		border-top: 1px solid oklch(1 0 0 / 0.07);
+	}
+</style>

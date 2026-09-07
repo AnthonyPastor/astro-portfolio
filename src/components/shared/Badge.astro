@@ -1,12 +1,11 @@
-<div class='flex items-center'>
-	<span class='relative inline-flex overflow-hidden rounded-full p-[1px]'>
+<div
+	class='inline-flex items-center gap-2.5 rounded-full border border-[oklch(0.82_0.14_195/0.35)] bg-[oklch(0.82_0.14_195/0.08)] py-2.5 pr-4 pl-3.5 text-[13px] tracking-[0.02em] text-[oklch(0.9_0.09_195)] [font-family:var(--font-mono)] whitespace-nowrap'
+>
+	<span class='relative flex size-2'>
 		<span
-			class='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]'
+			class='absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-green)] opacity-75'
 		></span>
-		<div
-			class='inline-flex items-center justify-center w-full px-3 py-1 text-sm rounded-full cursor-pointer bg-gray-800 text-white/80 backdrop-blur-3xl whitespace-nowrap'
-		>
-			<slot />
-		</div>
+		<span class='relative inline-flex size-2 rounded-full bg-[var(--accent-green)]'></span>
 	</span>
+	<slot />
 </div>

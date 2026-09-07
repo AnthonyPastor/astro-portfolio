@@ -1,0 +1,95 @@
+---
+import { getI18N } from "@/i18n";
+import { getYearsOfExperience } from "@/utils/getYearsOfExperience";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const years = getYearsOfExperience();
+
+const BUILD_ITEMS = [
+	i18n.profile.web_apps,
+	i18n.profile.mobile_apps,
+	i18n.profile.ecommerce,
+	i18n.profile.mgmt_platforms,
+];
+
+const PRODUCTS = [
+	{ name: "Amber", description: i18n.profile.amber_desc },
+	{ name: "Guesty", description: i18n.profile.guesty_desc },
+	{ name: "Fatsack", description: i18n.profile.fatsack_desc },
+];
+---
+
+<div class='profile-grid'>
+	<div class='profile-cell flex flex-col justify-between gap-7' data-reveal='1'>
+		<div>
+			<p
+				class='text-[clamp(56px,8vw,84px)] font-bold leading-[0.9] tracking-[-0.05em] text-[var(--accent-cyan)]'
+				data-count={years}
+				data-prefix='+'
+			>
+				+{years}
+			</p>
+			<p class='mt-3.5 text-lg text-[var(--text-1)]'>{i18n.profile.years_label}</p>
+		</div>
+		<div class='flex flex-col gap-2'>
+			<span class='text-[11px] uppercase tracking-[0.1em] text-[var(--text-3)] [font-family:var(--font-mono)]'>
+				{i18n.profile.base_label}
+			</span>
+			<span class='text-base text-[var(--text-2)]'>{i18n.profile.base_value}</span>
+		</div>
+	</div>
+
+	<div class='profile-cell' data-reveal='2'>
+		<span class='text-[11px] uppercase tracking-[0.1em] text-[var(--text-3)] [font-family:var(--font-mono)]'>
+			{i18n.profile.build_label}
+		</span>
+		<ul class='mt-4.5 flex flex-col gap-3.5'>
+			{
+				BUILD_ITEMS.map((item, index) => (
+					<li class='flex items-baseline gap-3 text-[19px] font-medium text-[var(--fg)]'>
+						<span
+							class='size-1.5 shrink-0 rounded-full'
+							style={`background:${["var(--accent-cyan)", "oklch(0.8 0.14 230)", "var(--accent-violet)", "var(--accent-violet-2)"][index]}`}
+						/>
+						{item}
+					</li>
+				))
+			}
+		</ul>
+		<p class='mt-5.5 text-sm text-[var(--text-3)] text-pretty'>{i18n.profile.build_note}</p>
+	</div>
+
+	<div class='profile-cell' data-reveal='3'>
+		<span class='text-[11px] uppercase tracking-[0.1em] text-[var(--text-3)] [font-family:var(--font-mono)]'>
+			{i18n.profile.products_label}
+		</span>
+		<ul class='mt-4.5 flex flex-col gap-4'>
+			{
+				PRODUCTS.map((product) => (
+					<li>
+						<p class='text-[19px] font-semibold text-[var(--fg)]'>{product.name}</p>
+						<p class='mt-0.5 text-[15px] text-[var(--text-2)]'>{product.description}</p>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>
+
+<style>
+	.profile-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1px;
+		background: var(--border-1);
+		border: 1px solid var(--border-1);
+		border-radius: 1.5rem;
+		overflow: hidden;
+	}
+	.profile-cell {
+		padding: 34px 30px;
+		background: var(--surface-3);
+		backdrop-filter: blur(12px);
+	}
+</style>

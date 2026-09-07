@@ -1,92 +1,353 @@
 ---
 import "../styles/global.css";
 import "@fontsource-variable/onest";
+import "@fontsource-variable/jetbrains-mono";
 import Header from "@/components/header/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Seo from "@/components/Seo.astro";
 import { ClientRouter } from "astro:transitions";
-
-interface Props {
-	title: string;
-	description: string;
-}
-
-const { title, description } = Astro.props;
 
 const { currentLocale } = Astro;
 ---
 
 <!doctype html>
-<html lang={currentLocale}>
+<html lang={currentLocale} class='no-js'>
 	<head>
 		<meta charset='UTF-8' />
-		<meta name='description' content={description} />
 		<meta name='viewport' content='width=device-width' />
-		<link rel='icon' type='image/svg+xml' href='/photo.webp' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='generator' content={Astro.generator} />
-		<title>{title}</title>
+		<Seo />
 		<ClientRouter />
+		<script is:inline>
+			document.documentElement.classList.replace("no-js", "js");
+		</script>
 	</head>
-	<body class='text-white'>
-		<div
-			class='absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'
-		>
+	<body>
+		<div class='scroll-progress' aria-hidden='true'>
+			<div id='scroll-progress-bar'></div>
 		</div>
+
+		<div class='bg-blob bg-blob-a' aria-hidden='true'></div>
+		<div class='bg-blob bg-blob-b' aria-hidden='true'></div>
+		<div class='bg-blob bg-blob-c' aria-hidden='true'></div>
 
 		<Header />
 		<slot />
 		<Footer />
+
 		<style is:global>
 			:root {
 				color-scheme: dark;
+
+				--bg: #07080a;
+				--fg: #f2f3f5;
+				--accent-cyan: oklch(0.85 0.13 195);
+				--accent-cyan-soft: oklch(0.82 0.14 195);
+				--accent-violet: oklch(0.72 0.15 275);
+				--accent-violet-2: oklch(0.68 0.13 320);
+				--accent-green: oklch(0.85 0.16 150);
+				--text-1: oklch(0.86 0.01 260);
+				--text-2: oklch(0.72 0.01 260);
+				--text-3: oklch(0.62 0.01 260);
+				--text-4: oklch(0.52 0.01 260);
+				--surface-1: oklch(0.11 0.008 260 / 0.65);
+				--surface-2: oklch(0.12 0.008 260 / 0.6);
+				--surface-3: oklch(0.13 0.008 260 / 0.55);
+				--border-1: oklch(1 0 0 / 0.08);
+				--border-2: oklch(1 0 0 / 0.14);
+				--font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 			}
+
 			html {
 				scroll-behavior: smooth;
 				font-family: "Onest Variable", system-ui, sans-serif;
 			}
 
 			body {
-				background: #050505;
+				background: var(--bg);
+				color: var(--fg);
 				display: flex;
 				flex-direction: column;
 				min-height: 100vh;
 				overscroll-behavior: none;
 			}
 
-			@media (prefers-reduce-motion: reduce) {
+			section[id] {
+				scroll-margin-top: 100px;
+			}
+
+			::selection {
+				background: oklch(0.85 0.13 195 / 0.3);
+			}
+
+			.scroll-progress {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 50;
+				width: 100%;
+				height: 2px;
+				background: transparent;
+			}
+
+			#scroll-progress-bar {
+				height: 100%;
+				width: 0%;
+				background: linear-gradient(90deg, var(--accent-violet), var(--accent-cyan));
+				box-shadow: 0 0 12px 0 oklch(0.85 0.13 195 / 0.6);
+			}
+
+			.bg-blob {
+				position: fixed;
+				z-index: -1;
+				border-radius: 9999px;
+				pointer-events: none;
+			}
+
+			.bg-blob-a {
+				top: -18vh;
+				left: 6vw;
+				width: 46vw;
+				height: 46vw;
+				min-width: 340px;
+				min-height: 340px;
+				background: radial-gradient(circle, oklch(0.72 0.15 275 / 0.5), transparent 68%);
+				filter: blur(90px);
+				animation: drift-a 26s ease-in-out infinite;
+			}
+
+			.bg-blob-b {
+				top: 34vh;
+				right: -12vw;
+				width: 40vw;
+				height: 40vw;
+				min-width: 300px;
+				min-height: 300px;
+				background: radial-gradient(circle, oklch(0.82 0.14 195 / 0.34), transparent 68%);
+				filter: blur(100px);
+				animation: drift-b 32s ease-in-out infinite;
+			}
+
+			.bg-blob-c {
+				bottom: -14vh;
+				left: 24vw;
+				width: 38vw;
+				height: 38vw;
+				min-width: 280px;
+				min-height: 280px;
+				background: radial-gradient(circle, oklch(0.68 0.13 320 / 0.3), transparent 70%);
+				filter: blur(110px);
+				animation: drift-c 38s ease-in-out infinite;
+			}
+
+			@keyframes drift-a {
+				0%,
+				100% {
+					transform: translate3d(0, 0, 0) scale(1);
+				}
+				33% {
+					transform: translate3d(8vw, 6vh, 0) scale(1.18);
+				}
+				66% {
+					transform: translate3d(-5vw, 10vh, 0) scale(0.9);
+				}
+			}
+			@keyframes drift-b {
+				0%,
+				100% {
+					transform: translate3d(0, 0, 0) scale(1);
+				}
+				40% {
+					transform: translate3d(-10vw, -7vh, 0) scale(1.25);
+				}
+				75% {
+					transform: translate3d(6vw, 5vh, 0) scale(0.95);
+				}
+			}
+			@keyframes drift-c {
+				0%,
+				100% {
+					transform: translate3d(0, 0, 0) scale(1.05);
+				}
+				50% {
+					transform: translate3d(4vw, -12vh, 0) scale(0.85);
+				}
+			}
+
+			html.js [data-reveal] {
+				opacity: 0;
+				transform: translateY(26px);
+				filter: blur(6px);
+				transition:
+					opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+					transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+					filter 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+			}
+			html.js [data-reveal].is-visible {
+				opacity: 1;
+				transform: none;
+				filter: blur(0);
+			}
+
+			@media (prefers-reduced-motion: reduce) {
 				html {
 					scroll-behavior: auto;
 				}
-			}
-
-			#header-nav {
-				animation: blur linear both 0.5s;
-				animation-timeline: scroll();
-				animation-range: 0 500px;
-			}
-
-			@keyframes blur {
-				from {
-					border: 0px;
+				html.js [data-reveal] {
+					opacity: 1;
+					transform: none;
+					filter: none;
 				}
-				to {
-					box-shadow:
-						0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-						0px 0px 0 1px rgba(0, 0, 0, 0.3);
-					background: rgba(0, 0, 0, 0.3);
-					backdrop-filter: blur(20px);
-					border-width: 1px;
-					border-color: rgba(0, 0, 0);
-					padding-left: 0.75rem;
-					padding-right: 0.75rem;
-					padding-top: 0.25rem;
-					padding-bottom: 0.25rem;
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					background-color: rgba(0, 0, 0, 0.3);
-					border-radius: 9999px;
+				*,
+				*::before,
+				*::after {
+					animation-duration: 1ms !important;
+					animation-iteration-count: 1 !important;
+					transition-duration: 1ms !important;
 				}
 			}
 		</style>
+
+		<script>
+			document.addEventListener("astro:page-load", () => {
+				const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+				const revealEls = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+				let revealObserver: IntersectionObserver | undefined;
+				if (!reduceMotion && revealEls.length) {
+					revealObserver = new IntersectionObserver(
+						(entries) => {
+							entries.forEach((entry) => {
+								if (!entry.isIntersecting) return;
+								const el = entry.target as HTMLElement;
+								const step = Number(el.dataset.reveal) || 1;
+								setTimeout(() => el.classList.add("is-visible"), (step - 1) * 90);
+								revealObserver?.unobserve(el);
+							});
+						},
+						{ threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+					);
+					revealEls.forEach((el) => revealObserver?.observe(el));
+				} else {
+					revealEls.forEach((el) => el.classList.add("is-visible"));
+				}
+
+				const countEls = Array.from(document.querySelectorAll<HTMLElement>("[data-count]"));
+				let countObserver: IntersectionObserver | undefined;
+				if (!reduceMotion && countEls.length) {
+					countObserver = new IntersectionObserver(
+						(entries) => {
+							entries.forEach((entry) => {
+								if (!entry.isIntersecting) return;
+								const el = entry.target as HTMLElement;
+								const target = Number(el.dataset.count) || 0;
+								const prefix = el.dataset.prefix ?? "";
+								const duration = 1400;
+								const start = performance.now();
+								const tick = (now: number) => {
+									const t = Math.min((now - start) / duration, 1);
+									const eased = 1 - Math.pow(1 - t, 3);
+									el.textContent = `${prefix}${Math.round(eased * target)}`;
+									if (t < 1) requestAnimationFrame(tick);
+								};
+								requestAnimationFrame(tick);
+								countObserver?.unobserve(el);
+							});
+						},
+						{ threshold: 0.4 }
+					);
+					countEls.forEach((el) => countObserver?.observe(el));
+				}
+
+				const progressBar = document.getElementById("scroll-progress-bar");
+				const navLinks = Array.from(
+					document.querySelectorAll<HTMLAnchorElement>("header nav a[data-nav-target]")
+				);
+				const navSections = navLinks
+					.map((link) => document.getElementById(link.dataset.navTarget || ""))
+					.filter((el): el is HTMLElement => Boolean(el));
+
+				const onScroll = () => {
+					const doc = document.documentElement;
+					const scrollTop = doc.scrollTop || document.body.scrollTop;
+					const scrollHeight = doc.scrollHeight - doc.clientHeight;
+
+					if (progressBar) {
+						const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+						progressBar.style.width = `${Math.min(Math.max(pct, 0), 100)}%`;
+					}
+
+					if (!navSections.length) return;
+
+					const nearBottom = scrollTop + doc.clientHeight >= doc.scrollHeight - 2;
+					let activeId = navSections[0].id;
+					if (nearBottom) {
+						activeId = navSections[navSections.length - 1].id;
+					} else {
+						for (const section of navSections) {
+							if (section.getBoundingClientRect().top - 160 <= 0) {
+								activeId = section.id;
+							}
+						}
+					}
+
+					navLinks.forEach((link) => {
+						link.classList.toggle("is-active", link.dataset.navTarget === activeId);
+					});
+				};
+
+				window.addEventListener("scroll", onScroll, { passive: true });
+				window.addEventListener("resize", onScroll);
+				onScroll();
+
+				const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-card]"));
+				const handleMove = (e: MouseEvent) => {
+					if (reduceMotion) return;
+					const card = e.currentTarget as HTMLElement;
+					const rect = card.getBoundingClientRect();
+					card.style.setProperty("--x", `${e.clientX - rect.left}px`);
+					card.style.setProperty("--y", `${e.clientY - rect.top}px`);
+				};
+				const handleEnter = (e: Event) => (e.currentTarget as HTMLElement).classList.add("is-active");
+				const handleLeave = (e: Event) => (e.currentTarget as HTMLElement).classList.remove("is-active");
+				cards.forEach((card) => {
+					card.addEventListener("mousemove", handleMove);
+					card.addEventListener("mouseenter", handleEnter);
+					card.addEventListener("mouseleave", handleLeave);
+				});
+
+				const isCoarsePointer = window.matchMedia("(hover: none)").matches;
+				let cardObserver: IntersectionObserver | undefined;
+				if (isCoarsePointer && cards.length) {
+					cardObserver = new IntersectionObserver(
+						(entries) => {
+							entries.forEach((entry) => {
+								entry.target.classList.toggle("is-active", entry.isIntersecting);
+							});
+						},
+						{ threshold: 0.45 }
+					);
+					cards.forEach((card) => cardObserver?.observe(card));
+				}
+
+				document.addEventListener(
+					"astro:before-swap",
+					() => {
+						revealObserver?.disconnect();
+						countObserver?.disconnect();
+						cardObserver?.disconnect();
+						window.removeEventListener("scroll", onScroll);
+						window.removeEventListener("resize", onScroll);
+						cards.forEach((card) => {
+							card.removeEventListener("mousemove", handleMove);
+							card.removeEventListener("mouseenter", handleEnter);
+							card.removeEventListener("mouseleave", handleLeave);
+						});
+					},
+					{ once: true }
+				);
+			});
+		</script>
 	</body>
 </html>
