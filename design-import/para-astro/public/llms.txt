@@ -1,0 +1,93 @@
+# Anthony Pastor
+
+> Full Stack Software Engineer based in Montevideo, Uruguay, with over 7 years
+> of experience. Builds web apps, mobile applications, e-commerce sites and
+> management platforms, mainly in fintech and proptech.
+
+- Name: Anthony Pastor (goes by Tony)
+- Role: Full Stack Software Engineer
+- Location: Montevideo, Uruguay
+- Experience: 7+ years (career started December 2019)
+- Website: https://anthony.pastor.dev/
+- Email: npastordominguez@gmail.com
+- LinkedIn: https://www.linkedin.com/in/anthony-pastor/
+- GitHub: https://github.com/AnthonyPastor
+- Languages: Spanish (native), English
+- Availability: open to Full Stack engineering roles and freelance projects.
+  Strongest in fintech, but open to other industries. Open to both remote and
+  on-site work.
+
+## What he builds
+
+- Web apps
+- Mobile applications
+- E-commerce
+- Management platforms and backoffice tools
+
+End to end, from the client application to the backoffice.
+
+## Stack
+
+React.js, Next.js, Node.js, Nest.js, TypeScript, JavaScript, Docker, Strapi,
+MongoDB, MySQL, AWS, Claude Code.
+
+Also worked with: .NET, Azure Pipelines, Firebase, payment gateway
+integrations, continuous integration, technical SEO.
+
+## Experience
+
+### Software Developer at Vangwe — December 2019 to present
+
+Part of the team on Amber, a Uruguayan investment platform, and on Guesty, an
+Israeli property management system with thousands of employees around the
+world. Also built Fatsack, a mobile application, along with e-commerce sites
+and management platforms. Implemented integrations with payment gateways and
+services such as AWS, Firebase and social media platforms, working alongside
+design and development teams on multinational products.
+
+Domains: fintech, proptech, mobile, e-commerce, payment gateways.
+
+### Software Developer at Sicfe S.A — from August 2022
+
+Contributed to an electronic invoicing system for Paraguay, built on the .NET
+ecosystem. Full stack role that included setting up continuous integration with
+Azure Pipelines and working directly with clients to resolve questions and
+issues.
+
+Domains: electronic invoicing, .NET, CI/CD.
+
+## Products worked on
+
+- **Amber** — Uruguayan investment platform (fintech).
+- **Guesty** — Israeli property management system, with thousands of employees
+  around the world (proptech).
+- **Fatsack** — mobile application.
+
+## Selected personal and client projects
+
+- **Artesania Uruguay** — https://artesaniauruguay.uy/ — led a team to build a
+  blog showcasing the high quality of Uruguayan crafts. Commissioned by the
+  Uruguayan government; ranked at the top of Google search results. React.js,
+  Strapi.
+- **Marcelo Coronato Metalurgia** — brand and landing page for a Uruguayan
+  metallurgical company. Advanced SEO work led to a 250% increase in customer
+  volume. React.js, Next.js.
+- **Teslo Shop** — https://teslo-shop-ap.vercel.app/ — full stack e-commerce
+  project replicating the Tesla store, built as part of the DevTalles Next.js
+  course. React.js, Next.js, Nest.js, Docker.
+  Code: https://github.com/AnthonyPastor/teslo-shop-ap
+  API: https://github.com/AnthonyPastor/product-rest-api
+
+## Also led
+
+Development teams for Uruguayan government websites, and worked at
+multinational companies.
+
+## Personal
+
+Started programming at university. Studied music for several years and enjoys
+ball sports; plays chess and reads in his free time.
+
+## Contact
+
+Email npastordominguez@gmail.com — replies within 24 hours.

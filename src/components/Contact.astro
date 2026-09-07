@@ -1,0 +1,58 @@
+---
+import SocialPill from "@/components/shared/SocialPill.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import Mail from "@/icons/Mail.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<div class='contact-banner' data-reveal='1'>
+	<span class='contact-glow' aria-hidden='true'></span>
+	<div class='relative'>
+		<h2 class='max-w-[620px] text-[clamp(30px,4.6vw,52px)] font-bold leading-[1.05] tracking-[-0.035em] text-[var(--fg)] text-balance'>
+			{i18n.contact.title}
+		</h2>
+		<p class='mt-5 max-w-[540px] text-[clamp(17px,2.2vw,21px)] leading-[1.5] text-[var(--text-2)] text-pretty'>
+			{i18n.contact.subtitle}
+		</p>
+		<div class='mt-9 flex flex-wrap items-center gap-3'>
+			<SocialPill
+				link='mailto:npastordominguez@gmail.com'
+				variant='primary'
+				ariaLabel='npastordominguez@gmail.com'
+			>
+				<Mail class='size-5' />
+				{i18n.contact.mail_cta}
+			</SocialPill>
+			<SocialPill link='https://www.linkedin.com/in/anthony-pastor/' variant='ghost'>
+				<LinkedIn class='size-4.5' />
+				LinkedIn
+			</SocialPill>
+		</div>
+	</div>
+</div>
+
+<style>
+	.contact-banner {
+		position: relative;
+		overflow: hidden;
+		border-radius: 28px;
+		border: 1px solid oklch(0.85 0.13 195 / 0.2);
+		background: linear-gradient(140deg, oklch(0.16 0.03 260 / 0.8), oklch(0.13 0.02 300 / 0.6));
+		backdrop-filter: blur(16px);
+		padding: clamp(40px, 6vw, 72px) clamp(28px, 5vw, 60px);
+	}
+	.contact-glow {
+		position: absolute;
+		top: -40%;
+		right: -10%;
+		width: 420px;
+		height: 420px;
+		border-radius: 9999px;
+		background: radial-gradient(circle, oklch(0.82 0.14 195 / 0.22), transparent 65%);
+		filter: blur(50px);
+		pointer-events: none;
+	}
+</style>

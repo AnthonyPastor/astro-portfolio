@@ -1,66 +1,13 @@
 ---
 import LinkButton from "@/components/shared/LinkButton.astro";
-import NextjsIcon from "@/icons/Nextjs.astro";
-import StrapiIcon from "@/icons/Strapi.astro";
-import NodeIcon from "@/icons/Nodejs.astro";
-import ReactIcon from "@/icons/React.astro";
+import SectionHeading from "@/components/shared/SectionHeading.astro";
 import GithubIcon from "@/icons/Github.astro";
 import LinkIcon from "@/icons/Link.astro";
-import DockerIcon from "@/icons/Docker.astro";
-import NestjsIcon from "@/icons/Nestjs.astro";
 
 import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
-
-interface Tag {
-	name: string;
-	customClass?: string;
-	icon: (_props: Record<string, any>) => any;
-}
-
-const TAGS: { [key: string]: Tag } = {
-	NEXT: {
-		name: "Next.js",
-		customClass: "bg-black text-white",
-		icon: NextjsIcon,
-	},
-	STRAPI: {
-		name: "Strapi",
-		customClass: "bg-purple-500/15 border border-1 border-white/30",
-		icon: StrapiIcon,
-	},
-	REACT: {
-		name: "React.js",
-		customClass: "bg-white/20 text-white",
-		icon: ReactIcon,
-	},
-	NODE: {
-		name: "Node.js",
-		icon: NodeIcon,
-	},
-	DOCKER: {
-		name: "Docker",
-		customClass: "bg-blue-500/20 border border-1 border-white/30",
-		icon: DockerIcon,
-	},
-	NEST: {
-		name: "Nest.js",
-		customClass: "bg-red-500/20 border border-1 border-white/30",
-		icon: NestjsIcon,
-	},
-};
-
-interface Projects {
-	titles: String;
-	description: String;
-	link: String;
-	github?: String;
-	github2?: String;
-	image: String;
-	tags: Tag[];
-}
 
 const PROJECTS = [
 	{
@@ -68,15 +15,16 @@ const PROJECTS = [
 		description: i18n.projects.proj_1.description,
 		link: "https://artesaniauruguay.uy/",
 		image: "/projects/artesanias.webp",
-		tags: [TAGS.REACT, TAGS.STRAPI],
+		alt: i18n.projects.alt.artesania,
+		tags: ["React.js", "Strapi"],
 	},
 	{
 		title: "Marcelo Coronato Metalurgia",
 		description: i18n.projects.proj_2.description,
 		link: "https://herreria-coronato-git-dev-anthonypastor.vercel.app/",
-
 		image: "/projects/coronato.webp",
-		tags: [TAGS.REACT, TAGS.NEXT],
+		alt: i18n.projects.alt.coronato,
+		tags: ["React.js", "Next.js"],
 	},
 	{
 		title: "Teslo Shop",
@@ -85,56 +33,124 @@ const PROJECTS = [
 		github: "https://github.com/AnthonyPastor/teslo-shop-ap",
 		github2: "https://github.com/AnthonyPastor/product-rest-api",
 		image: "/projects/teslo-shop.webp",
-		tags: [TAGS.REACT, TAGS.NEXT, TAGS.NEST, TAGS.DOCKER],
+		alt: i18n.projects.alt.teslo,
+		tags: ["React.js", "Next.js", "Nest.js", "Docker"],
 	},
 ];
 ---
 
+<SectionHeading title={i18n.projects.title} subtitle={i18n.projects.subtitle} />
 {
-	PROJECTS.map(({ title, description, link, github, github2, image, tags }) => (
-		<article class='mb-24'>
-			<h3 class='text-2xl font-semibold text-yellow-200 mb-2 '>{title}</h3>
-			<p class='text-lg my-4'>{description}</p>
-			<ul class='flex gap-x-4 gap-y-2 mb-6 flex-wrap'>
-				{tags.map((tag) => (
-					<li>
-						<span
-							class={`flex gap-x-2 rounded-full text-sm items-center py-1 px-2 ${tag.customClass}`}
-						>
-							<tag.icon class='size-6' />
-							{tag.name}
-						</span>
-					</li>
-				))}
-			</ul>
-
-			<img
-				src={image}
-				alt={`Screenshot of project ${title}`}
-				loading='lazy'
-				class='rounded shadow-2xl shodow-white/10 aspect-video'
-			/>
-
-			<footer class='mt-4 flex gap-x-4 items-center flex-wrap'>
-				{github && (
-					<LinkButton href={github}>
-						<GithubIcon class='size-6' />
-						{i18n.projects.links.code}
-					</LinkButton>
-				)}
-				{github2 && (
-					<LinkButton href={github2}>
-						<GithubIcon class='size-6' />
-						{i18n.projects.links.api}
-					</LinkButton>
-				)}
-				{link && (
-					<LinkButton href={link}>
-						<LinkIcon class='size-5' />
-						{i18n.projects.links.web}
-					</LinkButton>
-				)}
-			</footer>
+	PROJECTS.map(({ title, description, link, github, github2, image, alt, tags }, index) => (
+		<article class='project-card' data-card data-reveal={index + 1}>
+			<div class='project-glow' aria-hidden='true' />
+			<div class='project-grid'>
+				<div class='project-text'>
+					<h3 class='text-[clamp(23px,2.6vw,30px)] font-semibold tracking-[-0.025em] text-[var(--fg)]'>{title}</h3>
+					<p class='text-[17px] leading-[1.6] text-[var(--text-1)] text-pretty'>{description}</p>
+					<ul class='flex flex-wrap gap-2'>
+						{tags.map((tag) => (
+							<li class='rounded-full border border-[var(--border-1)] bg-white/5 px-3 py-1 text-[12px] text-[var(--text-1)] [font-family:var(--font-mono)]'>
+								{tag}
+							</li>
+						))}
+					</ul>
+					<footer class='mt-auto pt-2.5 flex flex-wrap items-center gap-2.5'>
+						{link && (
+							<LinkButton href={link}>
+								<LinkIcon class='size-4' />
+								{i18n.projects.links.web}
+							</LinkButton>
+						)}
+						{github && (
+							<LinkButton href={github}>
+								<GithubIcon class='size-4' />
+								{i18n.projects.links.code}
+							</LinkButton>
+						)}
+						{github2 && (
+							<LinkButton href={github2}>
+								{i18n.projects.links.api}
+							</LinkButton>
+						)}
+					</footer>
+				</div>
+				<div class='project-image-wrap'>
+					<img src={image} alt={alt} loading='lazy' class='project-image' data-zoom />
+				</div>
+			</div>
 		</article>
 	))
 }
+
+<style>
+	.project-card {
+		position: relative;
+		overflow: hidden;
+		border-radius: 1.5rem;
+		border: 1px solid var(--border-1);
+		background: var(--surface-1);
+		backdrop-filter: blur(14px);
+		margin-bottom: 1.75rem;
+		transition:
+			border-color 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+	.project-card:last-child {
+		margin-bottom: 0;
+	}
+	.project-card.is-active {
+		border-color: var(--border-2);
+		box-shadow: 0 0 40px -10px oklch(0.85 0.13 195 / 0.25);
+	}
+	.project-glow {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		background: radial-gradient(
+			340px circle at var(--x, 50%) var(--y, 50%),
+			oklch(0.85 0.13 195 / 0.15),
+			transparent 70%
+		);
+	}
+	.project-card.is-active .project-glow {
+		opacity: 1;
+	}
+	.project-grid {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+	}
+	.project-text {
+		padding: 32px;
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+	}
+	.project-image-wrap {
+		position: relative;
+		overflow: hidden;
+		min-height: 280px;
+	}
+	.project-image-wrap::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		background: linear-gradient(90deg, var(--surface-1) 0%, transparent 40%);
+	}
+	.project-image {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: left top;
+		transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+	}
+	.project-card.is-active .project-image {
+		transform: scale(1.06);
+	}
+</style>

@@ -1,0 +1,205 @@
+---
+/**
+ * SEO + structured data for the portfolio.
+ *
+ * Usage in src/layouts/Layout.astro, inside <head>:
+ *
+ *   import Seo from "@/components/Seo.astro";
+ *   ...
+ *   <Seo />
+ *
+ * Everything is derived from Astro.currentLocale and Astro.site, so each
+ * localized route emits its own canonical, hreflang cluster and og:locale.
+ * Remove the <title>, <meta name="description">, canonical and OG tags that
+ * currently live in Layout.astro so they are not duplicated.
+ */
+import { getI18N } from "@/i18n";
+import { getYearsOfExperience } from "@/utils/getYearsOfExperience";
+
+const SITE = "https://anthony.pastor.dev";
+const DEFAULT_LOCALE = "en";
+
+const { currentLocale = DEFAULT_LOCALE } = Astro;
+const i18n = getI18N({ currentLocale });
+const years = getYearsOfExperience();
+
+const isES = currentLocale === "es";
+const lang = isES ? "es" : "en";
+
+// Canonical for this route. Astro.url.pathname already carries the locale prefix.
+const canonical = new URL(Astro.url.pathname, SITE).href.replace(/(.)\/$/, "$1/");
+
+const title = isES
+	? `Anthony Pastor — Desarrollador de Software Full Stack (fintech, mobile, e-commerce)`
+	: `Anthony Pastor — Full Stack Software Engineer (fintech, mobile, e-commerce)`;
+
+// Keep descriptions under ~155 characters. No technology dumps: the tech list
+// belongs in knowsAbout below, where machines read it as data.
+const description = isES
+	? `Desarrollador Full Stack en Montevideo, Uruguay. +${years} años construyendo web apps, apps mobile, e-commerce y plataformas de gestión, sobre todo en fintech.`
+	: `Full Stack Software Engineer in Montevideo, Uruguay. ${years}+ years building web apps, mobile apps, e-commerce and management platforms, mainly in fintech.`;
+
+const ogImage = new URL("/photo.webp", SITE).href;
+
+const person = {
+	"@type": "Person",
+	"@id": `${SITE}/#anthony`,
+	name: "Anthony Pastor",
+	alternateName: "Tony",
+	givenName: "Anthony",
+	familyName: "Pastor",
+	url: `${SITE}/`,
+	image: ogImage,
+	email: "mailto:npastordominguez@gmail.com",
+	jobTitle: isES ? "Desarrollador de Software Full Stack" : "Full Stack Software Engineer",
+	description: isES
+		? `Desarrollador de Software Full Stack con más de ${years} años de experiencia, radicado en Montevideo, Uruguay. Construye web apps, aplicaciones mobile, e-commerce y plataformas de gestión, sobre todo en fintech y proptech.`
+		: `Full Stack Software Engineer with over ${years} years of experience, based in Montevideo, Uruguay. Builds web apps, mobile applications, e-commerce sites and management platforms, mainly in fintech and proptech.`,
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Montevideo",
+		addressCountry: "UY",
+	},
+	nationality: { "@type": "Country", name: "Uruguay" },
+	sameAs: [
+		"https://www.linkedin.com/in/anthony-pastor/",
+		"https://github.com/AnthonyPastor",
+	],
+	knowsLanguage: ["Spanish", "English"],
+	knowsAbout: [
+		"Full Stack Development",
+		"React.js",
+		"Next.js",
+		"Node.js",
+		"Nest.js",
+		"TypeScript",
+		"JavaScript",
+		"Docker",
+		"Strapi",
+		"MongoDB",
+		"MySQL",
+		"Amazon Web Services",
+		"Claude Code",
+		"Payment gateway integration",
+		"Fintech",
+		"Proptech",
+		"E-commerce",
+		"Mobile application development",
+		"Management platforms",
+		"Electronic invoicing",
+		".NET",
+		"Azure Pipelines",
+		"Continuous integration",
+		"Firebase",
+		"Search engine optimization",
+	],
+	hasOccupation: {
+		"@type": "Occupation",
+		name: "Software Developer",
+		occupationLocation: { "@type": "City", name: "Montevideo, Uruguay" },
+		skills:
+			"React.js, Next.js, Node.js, Nest.js, Docker, Strapi, MongoDB, MySQL, AWS, payment gateways, fintech platforms, mobile apps, e-commerce, management platforms",
+	},
+	worksFor: {
+		"@type": "Organization",
+		name: "Vangwe",
+		description:
+			"Product design and development company where Anthony works on multinational products.",
+	},
+	alumniOf: {
+		"@type": "Organization",
+		name: "Sicfe S.A",
+		description: "Electronic invoicing systems for Paraguay, built on the .NET ecosystem.",
+	},
+	seeks: {
+		"@type": "Demand",
+		name: "Full Stack software engineering roles and freelance projects, mainly fintech but open to other industries",
+	},
+};
+
+const projects = [
+	{
+		"@type": "CreativeWork",
+		name: "Artesania Uruguay",
+		url: "https://artesaniauruguay.uy/",
+		creator: { "@id": `${SITE}/#anthony` },
+		description:
+			"Blog showcasing Uruguayan crafts, commissioned by the Uruguayan government. Built with React.js and Strapi; ranked at the top of Google search results.",
+		keywords: "React.js, Strapi, SEO, government website",
+	},
+	{
+		"@type": "CreativeWork",
+		name: "Marcelo Coronato Metalurgia",
+		creator: { "@id": `${SITE}/#anthony` },
+		description:
+			"Brand and landing page for a Uruguayan metallurgical company. Advanced SEO work led to a 250% increase in customer volume.",
+		keywords: "React.js, Next.js, SEO, branding",
+	},
+	{
+		"@type": "CreativeWork",
+		name: "Teslo Shop",
+		url: "https://teslo-shop-ap.vercel.app/",
+		creator: { "@id": `${SITE}/#anthony` },
+		description:
+			"Full stack e-commerce project replicating the Tesla store, built with React.js, Next.js, Nest.js and Docker.",
+		keywords: "React.js, Next.js, Nest.js, Docker, e-commerce",
+	},
+];
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		person,
+		{
+			"@type": "WebSite",
+			"@id": `${SITE}/#website`,
+			url: `${SITE}/`,
+			name: "Anthony Pastor — Portfolio",
+			inLanguage: ["en", "es"],
+			about: { "@id": `${SITE}/#anthony` },
+			publisher: { "@id": `${SITE}/#anthony` },
+		},
+		{
+			"@type": "ProfilePage",
+			"@id": `${canonical}#profilepage`,
+			url: canonical,
+			name: title,
+			inLanguage: lang,
+			isPartOf: { "@id": `${SITE}/#website` },
+			mainEntity: { "@id": `${SITE}/#anthony` },
+		},
+		...projects,
+	],
+};
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Anthony Pastor" />
+
+<!-- hreflang cluster. x-default points at the root; every entry must resolve to
+     a real route, and each localized page must emit the full cluster. -->
+<link rel="alternate" hreflang="x-default" href={`${SITE}/`} />
+<link rel="alternate" hreflang="en" href={`${SITE}/`} />
+<link rel="alternate" hreflang="es" href={`${SITE}/es/`} />
+
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Anthony Pastor" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content="Anthony Pastor" />
+<meta property="og:locale" content={isES ? "es_UY" : "en_US"} />
+<meta property="og:locale:alternate" content={isES ? "en_US" : "es_UY"} />
+<meta property="profile:first_name" content="Anthony" />
+<meta property="profile:last_name" content="Pastor" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

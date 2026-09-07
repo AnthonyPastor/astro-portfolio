@@ -1,100 +1,52 @@
 ---
 import LenguageSwitcher from "@/components/header/LanguageSwitch.astro";
 import { getI18N } from "@/i18n";
+import { DEFAULT_LENGUAGE, LOCALES } from "@/i18n/locales.astro";
 
 const navItems = [
-	{
-		label: "experience",
-		url: "/#experience",
-	},
-	{
-		label: "projects",
-		url: "/#projects",
-	},
-	{
-		label: "about-me",
-		url: "/#about-me",
-	},
+	{ label: "home", target: "hero" },
+	{ label: "experience", target: "experience" },
+	{ label: "projects", target: "projects" },
+	{ label: "about-me", target: "about-me" },
 ];
 
-const { currentLocale } = Astro;
+const { currentLocale = DEFAULT_LENGUAGE } = Astro;
 const i18n = getI18N({ currentLocale });
+const localeHref = LOCALES[currentLocale]?.href ?? "";
 ---
 
-<header
-	class='fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2'
->
-	<nav
-		class='flex px-3 text-xs md:text-sm font-medium rounded-full text-gray-200 justify-center items-center'
-	>
+<header class='fixed top-2 lg:top-3.5 z-40 flex w-full items-center justify-center px-1.5 lg:px-4 box-border'>
+	<nav class='nav-pill flex flex-wrap items-center justify-center gap-0.5 lg:gap-1 rounded-full p-1 lg:p-1.5'>
 		{
 			navItems.map((link) => (
 				<a
-					class='relative block px-2 py-2 transition hover:text-yellow-400 '
+					class='nav-link rounded-full px-2 py-1.5 text-[12px] lg:px-3.5 lg:py-2 lg:text-[15px] font-medium text-[var(--text-2)] transition whitespace-nowrap'
 					aria-label={link.label}
-					href={link.url}
+					data-nav-target={link.target}
+					href={`${localeHref}/#${link.target}`}
 				>
 					{/* @ts-expect-error */}
 					{i18n.menu[link.label]}
 				</a>
 			))
 		}
+		<span class='block w-px h-4 lg:h-5 bg-[var(--border-2)] mx-0.5 lg:mx-1.5 shrink-0' aria-hidden='true'></span>
 		<LenguageSwitcher />
 	</nav>
 </header>
 
-<script>
-	document.addEventListener("astro:page-load", () => {
-		const sections = document.querySelectorAll("section");
-		const navItems = document.querySelectorAll("header nav a");
-
-		const callback = (entries: any[]) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					navItems.forEach((item) => {
-						if (item.getAttribute("aria-label") == entry.target.id) {
-							item.classList.add("text-yellow-500");
-						} else {
-							item.classList.remove("text-yellow-500");
-						}
-					});
-				}
-			});
-		};
-
-		const observer = new IntersectionObserver(callback, {
-			root: null,
-			rootMargin: "0px",
-			threshold: 0.3,
-		});
-
-		sections.forEach((section) => {
-			observer.observe(section);
-		});
-
-		// Cleanup function
-		document.onvisibilitychange = () => {
-			if (document.visibilityState === "hidden") {
-				observer.disconnect();
-			} else {
-				sections.forEach((section) => {
-					observer.observe(section);
-				});
-			}
-		};
-	});
-</script>
-
 <style>
-	nav {
-		animation: nav-shadown 1s linear both;
-		animation-timeline: scroll();
-		animation-range: 0 100px;
+	.nav-pill {
+		border: 1px solid var(--border-2);
+		background: oklch(0.16 0.01 260 / 0.6);
+		backdrop-filter: blur(20px) saturate(1.4);
+		box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.6);
 	}
-
-	@keyframes nav-shadown {
-		to {
-			@apply shadow-lg ring-1 backdrop-blur-sm bg-gray-800/90  ring-white/10;
-		}
+	.nav-link:hover:not(.is-active) {
+		background: oklch(1 0 0 / 0.06);
+	}
+	.nav-link.is-active {
+		background: var(--accent-cyan);
+		color: var(--bg);
 	}
 </style>

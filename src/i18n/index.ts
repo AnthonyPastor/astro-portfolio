@@ -10,10 +10,9 @@ const LANGUAGES = {
 
   const withYears = (data: any, years: number) => ({
     ...data,
-    seo: { ...data.seo, title: data.seo.title.replace('{{years}}', String(years)) },
     home: {
       ...data.home,
-      years_of_experience: data.home.years_of_experience.replace('{{years}}', String(years)),
+      hero_strong: data.home.hero_strong.replace('{{years}}', String(years)),
     },
   })
 

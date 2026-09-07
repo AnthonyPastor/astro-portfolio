@@ -1,53 +1,61 @@
 {
-	"seo": {
-		"title": "Anthony's portfolio - Software Dev with +{{years}} years of experience",
-		"description": "Hire Anthony Pastor to build your dream website or application. Experienced software developer with over 5 years of expertise in creating modern websites using cutting-edge technologies."
-	},
 	"menu": {
 		"home": "Home",
 		"experience": "Experience",
 		"projects": "Projects",
-		"about-me": "About me"
+		"about-me": "About"
 	},
 	"home": {
-		"name": "Hey, I am Anthony",
-		"status": {
-			"available": "Available"
-		},
-		"years_of_experience": "+{{years}} years of experience as a Software Engineer.",
-		"main_paragraph": "Full Stack Software Developer from Montevideo, Uruguay.",
-		"social": {
-			"linkedin": "LinkedIn",
-			"mail": "npastordominguez@gmail.com",
-			"download_cv": "CV"
-		}
+		"available": "Available for projects",
+		"greeting": "Hi, I am",
+		"hero_strong": "+{{years}} years of experience as a Software Engineer.",
+		"hero_rest": "Full Stack Developer from Montevideo, Uruguay. I work mostly in fintech and management platforms.",
+		"cta_work": "Let's work together",
+		"cta_cv": "Download CV"
+	},
+	"profile": {
+		"years_label": "years as a Software Engineer",
+		"base_label": "Based in",
+		"base_value": "Montevideo, Uruguay",
+		"build_label": "What I build",
+		"web_apps": "Web apps",
+		"mobile_apps": "Mobile apps",
+		"ecommerce": "E-commerce",
+		"mgmt_platforms": "Management platforms",
+		"build_note": "From the app to the backoffice, end to end. Mostly fintech, open to other industries.",
+		"products_label": "Products I have worked on",
+		"amber_desc": "Uruguayan investment platform",
+		"guesty_desc": "Israeli property management system, with thousands of employees around the world",
+		"fatsack_desc": "Mobile application"
+	},
+	"stack": {
+		"subtitle": "the everyday tools"
 	},
 	"experience": {
 		"title": "Work Experience",
-		"at": "at",
+		"subtitle": "2019 — today",
+		"present": "Present",
 		"work_1": {
 			"date": "Present",
 			"title": "Software Developer",
-			"company": "Vangwe",
-			"description_1": "Collaborated in multinational product design and development teams. Proficient in the JavaScript ecosystem, with extensive experience in React.js and Node.js.",
-			"description_2": "Additionally, implemented payment gateway integrations, and integrations with AWS, Firebase, and social media platforms."
+			"company_at": "at Vangwe",
+			"paragraph_1": "I was part of the team at <strong>Amber</strong>, the Uruguayan investment platform, and at <strong>Guesty</strong>, an Israeli property management system with thousands of employees around the world. I also built <strong>Fatsack</strong>, a mobile application, along with e-commerce sites and management platforms.",
+			"paragraph_2": "I implemented integrations with payment gateways and services such as AWS, Firebase and social media platforms, working alongside design and development teams on multinational products."
 		},
 		"work_2": {
 			"date": "August 2022",
 			"title": "Software Developer",
-			"company": "Sicfe S.A",
-			"description_1": "Contributed to the development of an electronic invoicing system for Paraguay, built with the .NET ecosystem.",
-			"description_2": "This full stack role involved implementing continuous integration with Azure Pipelines and client interactions to address questions and resolve issues."
+			"company_at": "at Sicfe S.A",
+			"paragraph_1": "I contributed to the development of an electronic invoicing system for Paraguay, built on the .NET ecosystem.",
+			"paragraph_2": "This full stack role included setting up continuous integration with Azure Pipelines and working directly with clients to resolve questions and issues."
 		},
-		"work_3": {
-			"date": "December 2019"
-		},
-		"status": {
-			"current": "Present"
-		}
+		"origin": "December 2019 · where it all started",
+		"chip_payments": "Payment gateways",
+		"chip_einvoicing": "E-invoicing"
 	},
 	"projects": {
 		"title": "Projects",
+		"subtitle": "selected",
 		"links": {
 			"code": "Code",
 			"api": "API",
@@ -61,14 +69,30 @@
 		},
 		"proj_3": {
 			"description": "Full stack E-commerce project replicating the Tesla store. This project was completed as part of the DevTalles Next.js course."
+		},
+		"alt": {
+			"artesania": "Screenshot of the Artesania Uruguay project",
+			"coronato": "Screenshot of the Marcelo Coronato Metalurgia project",
+			"teslo": "Screenshot of the Teslo Shop project"
 		}
 	},
 	"about": {
 		"title": "About me",
-		"first_paragraph": "My name is Anthony Pastor, but my friends call me Tony. I started programming when I entered university, and since then, I have been developing my skills as a Full Stack developer 👨🏽‍💻.",
-		"second_paragraph": "I have <strong>led development teams for websites for the Uruguayan government</strong> and participated in multinational companies. Some of my successes include:",
-		"third_paragraph": "• Participated in the design and implementation of tools that improved the client homologation times for Sicfe,<strong> reducing the process from 3 weeks to just 3 days.</strong> <br /> <br /> • Improved the UI & UX of QR Manager, <strong> enabling events with +1000 of attendees.</strong> <br /><br /> • Created the brand for a metallurgy company,<strong> increasing the customer volume by 250%.</strong>",
-		"fouth_paragraph": "I have studied music for several years and I love ball sports ⚽. In my free time, I play chess ♟️ and read books 📖.",
-		"fifth_paragraph": "Fun fact: I love chips 🍟"
+		"subtitle": "Tony, to my friends",
+		"paragraph_1": "My name is Anthony Pastor, but my friends call me Tony. I started programming when I entered university and have been developing my skills as a Full Stack developer ever since.",
+		"paragraph_2": "Over the last few years I have worked mostly in <strong>fintech and management platforms</strong>: investments, electronic invoicing, property management. I have also <strong>led development teams for Uruguayan government websites</strong> and worked at multinational companies.",
+		"paragraph_3": "Fintech is where I feel most at home, but I am open to other products. I studied music for several years and I love ball sports. In my free time I play chess and read books.",
+		"fun_fact": "Fun fact: I love french fries 🍟",
+		"highlight_amber": "<strong>Amber</strong> — I was part of the team behind the Uruguayan investment platform.",
+		"highlight_guesty": "<strong>Guesty</strong> — Israeli property management system, with thousands of employees around the world.",
+		"highlight_metal": "I created the brand for a metallurgical company, <strong>increasing customer volume by 250%.</strong>"
+	},
+	"contact": {
+		"title": "Got a project in mind?",
+		"subtitle": "Write to me and let's talk. I reply within 24 hours.",
+		"mail_cta": "Email me"
+	},
+	"footer": {
+		"location": "Montevideo, UY"
 	}
 }

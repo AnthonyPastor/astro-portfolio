@@ -11,45 +11,64 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<div class='max-w-xl'>
-	<div class='flex gap-4 mb-4 lg:mb-12'>
-		<img
-			src='/photo.webp'
-			alt='Anthony photo'
-			class='rounded-full size-24 md:size-12 overflow-hidden object-center object-cover'
-		/>
+<div id='hero-content'>
+	<div class='flex items-center gap-4 mb-8 lg:mb-12 flex-wrap' data-reveal='1'>
+		<div class='relative shrink-0'>
+			<span
+				class='absolute inset-0 rounded-full border-2 border-[var(--accent-cyan)] opacity-40 animate-ping'
+			></span>
+			<img
+				src='/photo.webp'
+				alt='Anthony photo'
+				class='relative size-20 md:size-19 rounded-full object-cover object-center ring-2 ring-[var(--border-2)]'
+			/>
+		</div>
 		<a
 			href='https://www.linkedin.com/in/anthony-pastor/'
 			target='_blank'
 			rel='noopener'
 			role='link'
-			class='flex items-center transition md:justify-center md:hover:scale-105'
+			class='inline-flex transition hover:-translate-y-0.5'
 		>
-			<Badge> {i18n.home.status.available} </Badge>
+			<Badge>{i18n.home.available}</Badge>
 		</a>
 	</div>
-	<h1 class='text-4xl font-bold tracking-tight sm:text-5xl text-white'>
-		{i18n.home.name}
-	</h1>
-	<p
-		class='mt-6 text-xl [&>strong]:text-yellow-200 [&>strong]:font-semibold text-gray-300'
+
+	<h1
+		class='font-bold text-[clamp(46px,8.5vw,104px)] leading-[0.96] tracking-[-0.04em] text-[var(--fg)] text-balance'
+		data-reveal='2'
 	>
-		<strong>{i18n.home.years_of_experience}</strong>
-		<span>{i18n.home.main_paragraph}</span>
+		{i18n.home.greeting}{" "}
+		<span
+			class='bg-[linear-gradient(100deg,oklch(0.95_0.03_195),oklch(0.82_0.14_195)_45%,oklch(0.72_0.15_275))] bg-clip-text text-transparent'
+		>
+			Anthony
+		</span>
+	</h1>
+
+	<p
+		class='mt-8 max-w-[720px] text-[clamp(20px,2.6vw,28px)] leading-[1.45] text-[var(--text-2)] text-pretty'
+		data-reveal='3'
+	>
+		<strong class='font-semibold text-[var(--fg)]'>{i18n.home.hero_strong}</strong>{" "}
+		<span>{i18n.home.hero_rest}</span>
 	</p>
 
-	<nav class='flex gap-4 mt-8 flex-wrap'>
-		<SocialPill link='https://www.linkedin.com/in/anthony-pastor/'>
-			<LinkedIn class='size-4 lg:size-5' />
-			{i18n.home.social.linkedin}
+	<nav class='flex gap-3 mt-10 flex-wrap' data-reveal='4'>
+		<SocialPill link='mailto:npastordominguez@gmail.com' variant='primary'>
+			<Mail class='size-4' />
+			{i18n.home.cta_work}
 		</SocialPill>
-		<SocialPill link='/CV.pdf' downloadName='AnthonyPastor_CV.pdf'>
-			<CVIcon class='size-4 lg:size-6' />
-			{i18n.home.social.download_cv}
+		<SocialPill link='/CV.pdf' downloadName='AnthonyPastor_CV.pdf' variant='ghost'>
+			<CVIcon class='size-4' />
+			{i18n.home.cta_cv}
 		</SocialPill>
-		<SocialPill link='mailto:npastordominguez@gmail.com'>
-			<Mail class='size-4 lg:size-6' />
-			{i18n.home.social.mail}
+		<SocialPill
+			link='https://www.linkedin.com/in/anthony-pastor/'
+			variant='icon'
+			ariaLabel='LinkedIn'
+		>
+			<LinkedIn class='size-5' />
 		</SocialPill>
 	</nav>
 </div>

@@ -1,28 +1,60 @@
 ---
+import SectionHeading from "@/components/shared/SectionHeading.astro";
 import { getI18N } from "@/i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
+
+const HIGHLIGHTS = [
+	{ text: i18n.about.highlight_amber, color: "var(--accent-cyan)" },
+	{ text: i18n.about.highlight_guesty, color: "var(--accent-violet)" },
+	{ text: i18n.about.highlight_metal, color: "var(--accent-violet-2)" },
+];
 ---
 
-<div
-	class='[&>p]:mb-4 [&>p]:text-md [&>p]:text-pretty [&>p>strong]:text-yellow-400 [&>p>strong]:font-semibold'
->
-	<p>
-		<Fragment set:html={i18n.about.first_paragraph} />
-	</p>
-	<p>
-		<Fragment set:html={i18n.about.second_paragraph} />
-	</p>
-
-	<p>
-		<Fragment set:html={i18n.about.third_paragraph} />
-	</p>
-
-	<p>
-		<Fragment set:html={i18n.about.forth_paragraph} />
-	</p>
-	<p class='text-md mb-6 italic'>
-		<Fragment set:html={i18n.about.fifth_paragraph} />
-	</p>
+<SectionHeading title={i18n.about.title} subtitle={i18n.about.subtitle} />
+<div class='grid gap-6' style='grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));'>
+	<div
+		class='flex flex-col gap-5 [&_strong]:font-semibold [&_strong]:text-[var(--accent-cyan-soft)]'
+		data-reveal='1'
+	>
+		<p class='text-[19px] leading-[1.6] text-[oklch(0.88_0.01_260)] text-pretty'>{i18n.about.paragraph_1}</p>
+		<p class='text-[19px] leading-[1.6] text-[var(--text-1)] text-pretty' set:html={i18n.about.paragraph_2} />
+		<p class='text-[17px] leading-[1.6] text-[var(--text-2)] text-pretty'>{i18n.about.paragraph_3}</p>
+		<p class='text-[13px] text-[var(--text-4)] [font-family:var(--font-mono)]'>
+			{i18n.about.fun_fact}
+		</p>
+	</div>
+	<div class='flex flex-col gap-3' data-reveal='2'>
+		{
+			HIGHLIGHTS.map((highlight) => (
+				<div class='highlight-card' style={`--accent:${highlight.color}`}>
+					<span class='highlight-bar' />
+					<p
+						class='text-[16px] leading-[1.55] text-[oklch(0.85_0.01_260)] text-pretty [&_strong]:font-semibold [&_strong]:text-[var(--fg)]'
+						set:html={highlight.text}
+					/>
+				</div>
+			))
+		}
+	</div>
 </div>
+
+<style>
+	.highlight-card {
+		display: flex;
+		align-items: flex-start;
+		gap: 16px;
+		border-radius: 18px;
+		border: 1px solid var(--border-1);
+		background: var(--surface-2);
+		padding: 22px 24px;
+	}
+	.highlight-bar {
+		flex: none;
+		width: 6px;
+		align-self: stretch;
+		border-radius: 9999px;
+		background: var(--accent);
+	}
+</style>

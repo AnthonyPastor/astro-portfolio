@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet" />
+<style>
+body { margin: 0; background: #050505; color: #fff; font-family: "Onest", system-ui, sans-serif; overscroll-behavior: none; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: #facc15; }
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</helmet>
+<div style="position: relative; min-height: 100vh; background: #050505; overflow-x: hidden;">
+<div style="position: absolute; top: 0; left: 0; z-index: 0; height: 100%; width: 100%; background-color: #0a0a0a; background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120,119,198,0.3), rgba(255,255,255,0)); pointer-events: none;"></div>
+
+<header style="position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: center; width: 100%; margin: 8px auto 0;">
+  <nav style="display: flex; padding: 0 12px; font-size: 14px; font-weight: 500; border-radius: 9999px; color: #e5e7eb; justify-content: center; align-items: center; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); background: rgba(31,41,55,0.9); backdrop-filter: blur(4px); box-sizing: border-box;">
+    <a href="#experience" aria-label="experience" style="position: relative; display: block; padding: 8px; transition: color .15s; color: #eab308;">Experiencia</a>
+    <a href="#projects" aria-label="projects" style="position: relative; display: block; padding: 8px; transition: color .15s;">Proyectos</a>
+    <a href="#about-me" aria-label="about-me" style="position: relative; display: block; padding: 8px; transition: color .15s;">Sobre mí</a>
+    <div style="position: relative; display: inline-block; text-align: left; margin-left: 24px;">
+      <div style="border-radius: 2px; font-size: 14px; font-weight: 600;" style-hover="background: #1f2937;">
+        <button type="button" style="display: inline-flex; justify-content: flex-start; align-items: center; width: 100%; gap: 8px; padding: 8px 12px; font-size: 14px; background: none; border: 0; color: inherit; font-family: inherit; font-weight: 600; cursor: pointer;">
+          <img src="assets/flag-uy.svg" alt="" style="width: 16px; height: 16px; object-fit: cover;" />
+          Español
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style="width: 16px; height: 16px; margin-right: -8px;"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main style="position: relative; z-index: 1; padding: 0 20px;">
+  <section style="width: 100%; max-width: 740px; margin: 0 auto; padding: 144px 0;">
+    <div style="max-width: 576px;">
+      <div style="display: flex; gap: 16px; margin-bottom: 48px; align-items: center;">
+        <img src="assets/photo.webp" alt="Anthony photo" style="border-radius: 9999px; width: 48px; height: 48px; overflow: hidden; object-fit: cover; object-position: center;" />
+        <a href="https://www.linkedin.com/in/anthony-pastor/" target="_blank" rel="noopener" role="link" style="display: flex; align-items: center; justify-content: center; transition: transform .15s;" style-hover="transform: scale(1.05);">
+          <div style="display: flex; align-items: center;">
+            <span style="position: relative; display: inline-flex; overflow: hidden; border-radius: 9999px; padding: 1px;">
+              <span style="position: absolute; inset: -1000%; animation: spin 2s linear infinite; background: conic-gradient(from 90deg at 50% 50%, #51E4B8 0%, #21554E 50%, #51E4B8 100%);"></span>
+              <div style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 4px 12px; font-size: 14px; border-radius: 9999px; cursor: pointer; background: #1f2937; color: rgba(255,255,255,0.8); backdrop-filter: blur(64px); white-space: nowrap;">Disponible</div>
+            </span>
+          </div>
+        </a>
+      </div>
+      <h1 style="font-size: 48px; line-height: 1; font-weight: 700; letter-spacing: -0.025em; color: #fff; margin: 0;">Hola, soy Anthony</h1>
+      <p style="margin-top: 24px; font-size: 20px; line-height: 1.75rem; color: #d1d5db;">
+        <strong style="color: #fef08a; font-weight: 600;">+7 años de experiencia como Ingeniero de Software.</strong>
+        <span>Desarrollador de Software Full Stack de Montevideo, Uruguay.</span>
+      </p>
+      <nav style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
+        <a href="https://www.linkedin.com/in/anthony-pastor/" target="_blank" rel="noopener noreferrer" role="link" style="border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255,255,255,0.05); transition: transform .15s, background .15s; font-size: 16px;" style-hover="transform: scale(1.1); background: rgba(255,255,255,0.1);">
+          <svg viewBox="0 0 256 256" preserveAspectRatio="xMidYMid" style="width: 20px; height: 20px;"><path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453" fill="currentColor"></path></svg>
+          LinkedIn
+        </a>
+        <a href="assets/CV.pdf" download="AnthonyPastor_CV.pdf" role="link" style="border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255,255,255,0.05); transition: transform .15s, background .15s; font-size: 16px;" style-hover="transform: scale(1.1); background: rgba(255,255,255,0.1);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path><path d="M11 12.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0"></path><path d="M13 11l1.5 6l1.5 -6"></path></svg>
+          CV
+        </a>
+        <a href="mailto:npastordominguez@gmail.com" target="_blank" rel="noopener noreferrer" role="link" style="border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255,255,255,0.05); transition: transform .15s, background .15s; font-size: 16px;" style-hover="transform: scale(1.1); background: rgba(255,255,255,0.1);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"></path><path d="M3 6l9 6l9 -6"></path><path d="M15 18h6"></path><path d="M18 15l3 3l-3 3"></path></svg>
+          npastordominguez@gmail.com
+        </a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="experience" data-screen-label="Experiencia" style="width: 100%; max-width: 740px; margin: 0 auto; padding-bottom: 96px;">
+    <h2 style="font-size: 24px; font-weight: 600; margin: 0 0 32px; display: flex; gap: 8px; align-items: center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px;"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>
+      Experiencia Laboral
+    </h2>
+    <ol style="position: relative; border-left: 1px solid #374151; margin-left: 12px; padding: 0; list-style: none;">
+      <li style="margin-bottom: 40px; margin-left: 16px; position: relative;">
+        <div style="position: absolute; width: 12px; height: 12px; background: #e5e7eb; border-radius: 9999px; margin-top: 6px; left: -22.5px; border: 1px solid #fff; box-sizing: border-box;"></div>
+        <time style="display: block; margin-bottom: 4px; font-size: 14px; font-weight: 400; line-height: 1; color: rgba(186,230,253,0.8);">Presente</time>
+        <h3 style="font-size: 18px; font-weight: 600; color: #fef08a; margin: 8px 0 0;">Desarrollador de Software <span style="color: rgba(254,240,138,0.7);"> en Vangwe</span></h3>
+        <p style="margin: 0 0 16px; font-size: 16px; font-weight: 400; color: #e5e7eb; text-wrap: pretty;">Colaboré en equipos de diseño y desarrollo de productos multinacionales. Experto en el ecosistema de JavaScript, con amplia experiencia en React.js y Node.js.</p>
+        <p style="margin: 0 0 16px; font-size: 16px; font-weight: 400; color: #e5e7eb; text-wrap: pretty;">Además, implementé integraciones con pasarelas de pago y servicios como AWS, Firebase y plataformas de redes sociales.</p>
+      </li>
+      <li style="margin-bottom: 40px; margin-left: 16px; position: relative;">
+        <div style="position: absolute; width: 12px; height: 12px; background: #e5e7eb; border-radius: 9999px; margin-top: 6px; left: -22.5px; border: 1px solid #fff; box-sizing: border-box;"></div>
+        <time style="display: block; margin-bottom: 4px; font-size: 14px; font-weight: 400; line-height: 1; color: rgba(186,230,253,0.8);">Agosto de 2022</time>
+        <h3 style="font-size: 18px; font-weight: 600; color: #fef08a; margin: 8px 0 0;">Desarrollador de Software <span style="color: rgba(254,240,138,0.7);"> en Sicfe S.A</span></h3>
+        <p style="margin: 0 0 16px; font-size: 16px; font-weight: 400; color: #e5e7eb; text-wrap: pretty;">Contribuí al desarrollo de un sistema de facturación electrónica para Paraguay, construido con el ecosistema .NET.</p>
+        <p style="margin: 0 0 16px; font-size: 16px; font-weight: 400; color: #e5e7eb; text-wrap: pretty;">Este rol full stack incluyó la implementación de integración continua con Azure Pipelines e interacciones con clientes para resolver preguntas y problemas.</p>
+      </li>
+      <li style="margin-bottom: 40px; margin-left: 16px; position: relative;">
+        <div style="position: absolute; width: 12px; height: 12px; background: #e5e7eb; border-radius: 9999px; margin-top: 6px; left: -22.5px; border: 1px solid #fff; box-sizing: border-box;"></div>
+        <time style="display: block; margin-bottom: 4px; font-size: 14px; font-weight: 400; line-height: 1; color: rgba(186,230,253,0.8);">Diciembre de 2019</time>
+        <h3 style="font-size: 18px; font-weight: 600; color: #fef08a; margin: 8px 0 0;"><span style="color: rgba(254,240,138,0.7);"> </span></h3>
+      </li>
+    </ol>
+  </section>
+
+  <section id="projects" data-screen-label="Proyectos" style="width: 100%; max-width: 740px; margin: 0 auto; padding-bottom: 96px;">
+    <h2 style="font-size: 24px; font-weight: 600; margin: 0 0 32px; display: flex; gap: 8px; align-items: center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px;"><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path><path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg>
+      Proyectos
+    </h2>
+
+    <article style="margin-bottom: 96px;">
+      <h3 style="font-size: 24px; font-weight: 600; color: #fef08a; margin: 0 0 8px;">Artesania Uruguay</h3>
+      <p style="font-size: 18px; margin: 16px 0;">Lideré un equipo para crear un blog que muestra la alta calidad de las artesanías de Uruguay. Este portal fue encargado por el gobierno uruguayo y se posicionó exitosamente en la parte superior de los resultados de búsqueda de Google.</p>
+      <ul style="display: flex; column-gap: 16px; row-gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; flex-wrap: wrap;">
+        <li><span style="display: flex; gap: 8px; border-radius: 9999px; font-size: 14px; align-items: center; padding: 4px 8px; background: rgba(255,255,255,0.2); color: #fff;"><svg viewBox="0 0 256 228" preserveAspectRatio="xMidYMid" style="width: 24px; height: 24px;"><path d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621 6.238-30.281 2.16-54.676-11.769-62.708-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848 155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233 50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165 167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266 13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923 168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586 13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488 29.348-9.723 48.443-25.443 48.443-41.52 0-15.417-17.868-30.326-45.517-39.844ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86-22.86-10.235-22.86-22.86 10.235-22.86 22.86-22.86Z" fill="#00D8FF"></path></svg>React.js</span></li>
+        <li><span style="display: flex; gap: 8px; border-radius: 9999px; font-size: 14px; align-items: center; padding: 4px 8px; background: rgba(168,85,247,0.15); border: 1px solid rgba(255,255,255,0.3);"><svg viewBox="0 0 256 256" preserveAspectRatio="xMidYMid" style="width: 24px; height: 24px;"><path fill="#4945FF" d="M0 88.747c0-41.836 0-62.754 12.997-75.75C25.993 0 46.91 0 88.747 0h78.507c41.835 0 62.752 0 75.75 12.997C256 25.993 256 46.91 256 88.747v78.507c0 41.835 0 62.752-12.997 75.75C230.006 256 209.09 256 167.253 256H88.748c-41.836 0-62.754 0-75.75-12.997C0 230.006 0 209.09 0 167.253V88.748Z"></path><path fill="#FFF" d="M176.64 77.653H90.453V121.6H134.4v43.946h43.946V79.36c0-.943-.764-1.707-1.706-1.707Z"></path><path fill="#9593FF" d="M90.453 121.6h42.24c.943 0 1.707.764 1.707 1.706v42.24H92.16a1.706 1.706 0 0 1-1.707-1.706V121.6ZM134.4 165.546h43.946l-42.49 42.49c-.537.538-1.456.157-1.456-.602v-41.888ZM90.453 121.6H48.566c-.76 0-1.14-.92-.603-1.457l42.49-42.49V121.6Z"></path></svg>Strapi</span></li>
+      </ul>
+      <img src="assets/projects/artesanias.webp" alt="Screenshot of project Artesania Uruguay" loading="lazy" style="border-radius: 4px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); aspect-ratio: 16/9; width: 100%; display: block;" />
+      <footer style="margin-top: 16px; display: flex; column-gap: 16px; align-items: center; flex-wrap: wrap;">
+        <a href="https://artesaniauruguay.uy/" role="link" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; color: #fff; transition: background .15s, border-color .15s; background: #1f2937; border: 1px solid #4b5563; font-size: 14px; max-width: fit-content; border-radius: 12px;" style-hover="border-color: #111827;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          Sitio Web
+        </a>
+      </footer>
+    </article>
+
+    <article style="margin-bottom: 96px;">
+      <h3 style="font-size: 24px; font-weight: 600; color: #fef08a; margin: 0 0 8px;">Marcelo Coronato Metalurgia</h3>
+      <p style="font-size: 18px; margin: 16px 0;">Creé una marca y una Landing page para una empresa metalúrgica uruguaya. Utilizando técnicas avanzadas de SEO, posicioné exitosamente el sitio web entre los mejores resultados de búsqueda de Google, lo que resultó en un aumento del 250% en el volumen de clientes.</p>
+      <ul style="display: flex; column-gap: 16px; row-gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; flex-wrap: wrap;">
+        <li><span style="display: flex; gap: 8px; border-radius: 9999px; font-size: 14px; align-items: center; padding: 4px 8px; background: rgba(255,255,255,0.2); color: #fff;"><svg viewBox="0 0 256 228" preserveAspectRatio="xMidYMid" style="width: 24px; height: 24px;"><path d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621 6.238-30.281 2.16-54.676-11.769-62.708-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848 155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233 50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165 167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266 13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923 168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586 13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488 29.348-9.723 48.443-25.443 48.443-41.52 0-15.417-17.868-30.326-45.517-39.844ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86-22.86-10.235-22.86-22.86 10.235-22.86 22.86-22.86Z" fill="#00D8FF"></path></svg>React.js</span></li>
+        <li><span style="display: flex; gap: 8px; border-radius: 9999px; font-size: 14px; align-items: center; padding: 4px 8px; background: #000; color: #fff;"><svg viewBox="0 0 180 180" fill="none" style="width: 24px; height: 24px;"><circle cx="90" cy="90" r="87" fill="black" stroke="white" stroke-width="6"></circle><path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="#fff"></path><rect x="115" y="54" width="12" height="72" fill="#fff"></rect></svg>Next.js</span></li>
+      </ul>
+      <img src="assets/projects/coronato.webp" alt="Screenshot of project Marcelo Coronato Metalurgia" loading="lazy" style="border-radius: 4px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); aspect-ratio: 16/9; width: 100%; display: block;" />
+      <footer style="margin-top: 16px; display: flex; column-gap: 16px; align-items: center; flex-wrap: wrap;">
+        <a href="https://herreria-coronato-git-dev-anthonypastor.vercel.app/" role="link" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; color: #fff; transition: background .15s, border-color .15s; background: #1f2937; border: 1px solid #4b5563; font-size: 14px; max-width: fit-content; border-radius: 12px;" style-hover="border-color: #111827;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          Sitio Web
+        </a>
+      </footer>
+    </article>
+
+    <article style="margin-bottom: 96px;">
+      <h3 style="font-size: 24px; font-weight: 600; color: #fef08a; margin: 0 0 8px;">Teslo Shop</h3>
+      <p style="font-size: 18px; margin: 16px 0;">Proyecto de E-Commerce full stack replicando la tienda de Tesla. Este proyecto se completó como parte del curso DevTalles Next.js.</p>
+      <ul style="display: flex; column-gap: 16px; row-gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; flex-wrap: wrap;">
+        <li><span style="display: flex; gap: 8px; border-radius: 9999px; font-size: 14px; align-items: center; padding: 4px 8px; background: rgba(255,255,255,0.2); color: #fff;"><svg viewBox="0 0 256 228" preserveAspectRatio="xMidYMid" style="width: 24px; height: 24px;"><path d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621 6.238-30.281 2.16-54.676-11.769-62.708-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848 155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233 50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165 167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266 13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923 168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586 13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488 29.348-9.723 48.443-25.443 48.443-41.52 0-15.417-17.868-30.326-45.517-39.844ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86-22.86-10.235-22.86-22.86 10.235-22.86 22.86-22.86Z" fill="#00D8FF"></path></svg>React.js</span></li>
+        <li><span style="display: flex; gap: 8px; border-radius: 9999px; font-size: 14px; align-items: center; padding: 4px 8px; background: #000; color: #fff;"><svg viewBox="0 0 180 180" fill="none" style="width: 24px; height: 24px;"><circle cx="90" cy="90" r="87" fill="black" stroke="white" stroke-width="6"></circle><path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="#fff"></path><rect x="115" y="54" width="12" height="72" fill="#fff"></rect></svg>Next.js</span></li>
+        <li><span style="display: flex; gap: 8px; border-radius: 9999px; font-size: 14px; align-items: center; padding: 4px 8px; background: rgba(239,68,68,0.2); border: 1px solid rgba(255,255,255,0.3);"><svg viewBox="0 0 264.6 255.6" style="width: 24px; height: 24px;"><path d="M153.3 4.2c-1.8 0-3.5.4-5 1 3.3 2.1 5.1 5 6 8.3 0 .5.2.8.3 1.3l.1 1.1c.3 5.7-1.5 6.4-2.7 9.8-1.9 4.3-1.4 9 .9 12.7.2.5.4 1 .8 1.4-2.5-16.3 11.1-18.8 13.7-23.9.2-4.4-3.5-7.4-6.4-9.5a14.3 14.3 0 0 0-7.7-2.2zM174 8c-.3 1.5 0 1.1-.1 1.9l-.2 1.7-.4 1.5-.5 1.6-.8 1.5-.5.7-.4.6c-.3.5-.6 1-1 1.3-.3.4-.6.9-1 1.2l-1.3 1c-1.4 1.1-3 1.9-4.3 2.9-.5.3-1 .5-1.3 1-.5.2-.9.6-1.3 1l-1.1 1.2-1 1.3-.9 1.3-.7 1.5-.5 1.5a21 21 0 0 0-.5 1.6l-.1.9-.1.7-.1 1.7v1.1l.3 1.6c0 .6.1 1 .3 1.6l.5 1.5.4 1-14.8-5.8-7.5-2-4-1a120 120 0 0 0-11.8-1.7h-.4A115.5 115.5 0 0 0 87 34.9l-3 .6c-2 .3-3.9.8-5.7 1.2l-3 .8-2.7 1.2-2.2 1-.3.1-1.8 1-.5.1-2 1-1.2.7-.6.3-1.7 1-1.6 1-1.3.9-.1.1-1.3 1H58l-1 .8-.4.3-1 .8c0 .2-.1.2-.2.3l-1.2 1v.2c-.5.3-.9.7-1.2 1.1l-.2.1-1 1c0 .2-.3.3-.4.5l-1 1.1-.4.3-1.4 1.6-.2.2a38.1 38.1 0 0 1-7 6 48.9 48.9 0 0 1-12.1 6c-2.7.5-5.5 1.6-7.9 1.8l-1.6.2-1.6.4-1.6.6-1.5.7-1.4.9c-.5.3-1 .7-1.3 1.1-.5.3-1 .8-1.3 1.2l-1.1 1.3-1 1.4-.9 1.5-.7 1.7-.6 1.7-.3 1.5v.2L6 86.2v2.1a6.9 6.9 0 0 0 .7 2.4l.7 1.2.8 1.2a17.1 17.1 0 0 0 2.4 2c1.5 1.4 1.9 1.9 3.9 2.9l1 .5h.2v.4a13.3 13.3 0 0 0 1 3.1l.5 1.2.1.3a28.3 28.3 0 0 0 1.8 2.8l1 1.2 1.3 1.1h.1a14.2 14.2 0 0 0 5.4 3l.3.1.8.2c-.2 3.5-.3 6.8.3 8 .5 1.2 3.4-2.7 6.2-7.2-.4 4.4-.6 9.7 0 11.2.7 1.6 4.6-3.4 8-9a74.7 74.7 0 0 1 92 65.8c-.8-7-9.4-10.8-13.4-9.9-2 4.8-5.2 11-10.5 14.8.4-4.3.2-8.7-.7-13-1.4 6-4.2 11.5-8 16.3a18 18 0 0 1-15.5-7l-.5-.8-.5-1.4-.4-1.3V176c0-.5.1-1 .3-1.4 0-.4.2-.9.4-1.3l.8-1.4c1-3 1-5.6-1-7l-1.1-.7-.9-.3-.5-.2-1.4-.3a5 5 0 0 0-1.3-.2l-1.4-.1h-1l-1.4.2-1.4.3-1.3.4-1.3.6-1.3.7c-15 9.8-6 32.8 4.2 39.5-3.8.7-7.8 1.5-8.9 2.3l-.1.2a60.9 60.9 0 0 0 19.2 7.4 61.5 61.5 0 0 0 72.6-51.3l.4 1.7c.2 1.2.5 2.4.6 3.7l.2 1.7v.3l.2 1.6.1 2.2v5.4l-.1.8v1.5c-.2.2-.2.4-.2.5 0 .6 0 1-.2 1.5v.6c0 .7-.2 1.2-.3 1.9v.1l-.4 1.8v.2c0 .6-.2 1.2-.4 1.8v.2l-.5 1.8v.2l-.5 1.8v.1l-.6 2-.7 1.8-.8 1.9-.7 1.9c-.4.5-.6 1.2-1 1.8l-.1.4s0 .2-.2.2a61.2 61.2 0 0 1-18.1 21.7l-1.6 1.1c0 .2-.3.2-.4.4l-1.4 1 .2.3 2.7-.4h.1a137.7 137.7 0 0 0 6.5-1.2l.9-.2 1.3-.3 1.2-.3c6.4-1.5 12.7-3.7 18.7-6.2-10.2 14-24 25.3-40.1 32.8a103.2 103.2 0 0 0 83.1-52.6c-2.7 15-8.6 29.1-17.4 41.5a101.7 101.7 0 0 0 44.5-69.2c2.2 10.2 2.8 20.7 1.8 31.1 46.7-65 4-132.5-14-150.3l-.1-.3v.1l-.1-.1-.2 2.3a87 87 0 0 1-.6 4.3l-1.1 4.3a53.7 53.7 0 0 1-3.5 8 44 44 0 0 1-9.9 12l-1.5 1.4a36 36 0 0 1-7.4 4.7l-4 1.8a45.5 45.5 0 0 1-8.6 2.3l-4.4.6a49.7 49.7 0 0 1-11.9-.8l-4.3-1.1a48 48 0 0 0 20.7-6.8l3.6-2.6 3.3-2.9 3-3.2c1-1.1 1.9-2.3 2.7-3.5.2-.1.3-.4.4-.6l1.9-3.1a44.5 44.5 0 0 0 3.5-8c.4-1.4.8-2.9 1-4.3.3-1.5.6-2.9.7-4.3l.3-4.4-.1-3.1-.6-4.3c-.2-1.5-.5-3-1-4.4-.4-1.3-.8-2.7-1.4-4.1-.5-1.4-1.1-2.7-1.8-4l-2.2-3.8a71.3 71.3 0 0 0-5.5-6.9 40.4 40.4 0 0 0-12-8.6C178 9.3 176 8.6 174 8z" fill="#e0234e" fill-rule="evenodd"></path></svg>Nest.js</span></li>
+        <li><span style="display: flex; gap: 8px; border-radius: 9999px; font-size: 14px; align-items: center; padding: 4px 8px; background: rgba(59,130,246,0.2); border: 1px solid rgba(255,255,255,0.3);"><svg viewBox="0 0 24 24" fill="#008fe2" style="width: 24px; height: 24px;"><path d="M13.98 11.08h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19h-2.12a.18.18 0 0 0-.18.18v1.9c0 .1.08.18.18.18m-2.95-5.43h2.12a.19.19 0 0 0 .18-.19V3.57a.19.19 0 0 0-.18-.18h-2.12a.18.18 0 0 0-.19.18v1.9c0 .1.09.18.19.18m0 2.71h2.12a.19.19 0 0 0 .18-.18V6.29a.19.19 0 0 0-.18-.18h-2.12a.18.18 0 0 0-.19.18v1.89c0 .1.09.18.19.18m-2.93 0h2.12a.19.19 0 0 0 .18-.18V6.29a.18.18 0 0 0-.18-.18H8.1a.18.18 0 0 0-.18.18v1.89c0 .1.08.18.18.18m-2.96 0h2.11a.19.19 0 0 0 .19-.18V6.29a.18.18 0 0 0-.19-.18H5.14a.19.19 0 0 0-.19.18v1.89c0 .1.08.18.19.18m5.89 2.72h2.12a.19.19 0 0 0 .18-.19V9.01a.19.19 0 0 0-.18-.19h-2.12a.18.18 0 0 0-.19.18v1.9c0 .1.09.18.19.18m-2.93 0h2.12a.18.18 0 0 0 .18-.19V9.01a.18.18 0 0 0-.18-.19H8.1a.18.18 0 0 0-.18.18v1.9c0 .1.08.18.18.18m-2.96 0h2.11a.18.18 0 0 0 .19-.19V9.01a.18.18 0 0 0-.18-.19H5.14a.19.19 0 0 0-.19.19v1.88c0 .1.08.19.19.19m-2.92 0h2.12a.18.18 0 0 0 .18-.19V9.01a.18.18 0 0 0-.18-.19H2.22a.18.18 0 0 0-.19.18v1.9c0 .1.08.18.19.18m21.54-1.19c-.06-.05-.67-.51-1.95-.51-.34 0-.68.03-1.01.09a3.77 3.77 0 0 0-1.72-2.57l-.34-.2-.23.33a4.6 4.6 0 0 0-.6 1.43c-.24.97-.1 1.88.4 2.66a4.7 4.7 0 0 1-1.75.42H.76a.75.75 0 0 0-.76.75 11.38 11.38 0 0 0 .7 4.06 6.03 6.03 0 0 0 2.4 3.12c1.18.73 3.1 1.14 5.28 1.14.98 0 1.96-.08 2.93-.26a12.25 12.25 0 0 0 3.82-1.4 10.5 10.5 0 0 0 2.61-2.13c1.25-1.42 2-3 2.55-4.4h.23c1.37 0 2.21-.55 2.68-1 .3-.3.55-.66.7-1.06l.1-.28Z"></path></svg>Docker</span></li>
+      </ul>
+      <img src="assets/projects/teslo-shop.webp" alt="Screenshot of project Teslo Shop" loading="lazy" style="border-radius: 4px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); aspect-ratio: 16/9; width: 100%; display: block;" />
+      <footer style="margin-top: 16px; display: flex; column-gap: 16px; align-items: center; flex-wrap: wrap;">
+        <a href="https://github.com/AnthonyPastor/teslo-shop-ap" role="link" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; color: #fff; transition: background .15s, border-color .15s; background: #1f2937; border: 1px solid #4b5563; font-size: 14px; max-width: fit-content; border-radius: 12px;" style-hover="border-color: #111827;">
+          <svg viewBox="0 0 256 250" fill="currentColor" preserveAspectRatio="xMidYMid" style="width: 24px; height: 24px;"><path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Z"></path></svg>
+          Código
+        </a>
+        <a href="https://github.com/AnthonyPastor/product-rest-api" role="link" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; color: #fff; transition: background .15s, border-color .15s; background: #1f2937; border: 1px solid #4b5563; font-size: 14px; max-width: fit-content; border-radius: 12px;" style-hover="border-color: #111827;">
+          <svg viewBox="0 0 256 250" fill="currentColor" preserveAspectRatio="xMidYMid" style="width: 24px; height: 24px;"><path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Z"></path></svg>
+          API
+        </a>
+        <a href="https://teslo-shop-ap.vercel.app/" role="link" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; color: #fff; transition: background .15s, border-color .15s; background: #1f2937; border: 1px solid #4b5563; font-size: 14px; max-width: fit-content; border-radius: 12px;" style-hover="border-color: #111827;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          Sitio Web
+        </a>
+      </footer>
+    </article>
+  </section>
+
+  <section id="about-me" data-screen-label="Sobre mí" style="width: 100%; max-width: 740px; margin: 0 auto; padding-bottom: 96px;">
+    <h2 style="font-size: 24px; font-weight: 600; margin: 0 0 32px; display: flex; gap: 8px; align-items: center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px;"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h.5"></path><path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"></path></svg>
+      Sobre mí
+    </h2>
+    <div>
+      <p style="margin: 0 0 16px; font-size: 16px; text-wrap: pretty;">Mi nombre es Anthony Pastor, pero mis amigos me llaman Tony. Empecé a programar cuando ingresé a la universidad y desde entonces he estado desarrollando mis habilidades como desarrollador Full Stack 👨🏽‍💻.</p>
+      <p style="margin: 0 0 16px; font-size: 16px; text-wrap: pretty;">He <strong style="color: #facc15; font-weight: 600;">liderado equipos de desarrollo para sitios web del gobierno uruguayo</strong> y participado en empresas multinacionales. Algunos de mis éxitos incluyen:</p>
+      <p style="margin: 0 0 16px; font-size: 16px; text-wrap: pretty;">• Participé en el diseño e implementación de herramientas que mejoraron los tiempos de homologación de clientes para Sicfe, <strong style="color: #facc15; font-weight: 600;"> reduciendo el proceso de 3 semanas a solo 3 días.</strong> <br /> <br /> • Mejoré la UI &amp; UX de QR Manager, <strong style="color: #facc15; font-weight: 600;"> permitiendo eventos con más de 1000 personas.</strong> <br /><br /> • Creé la marca para una empresa metalúrgica, <strong style="color: #facc15; font-weight: 600;"> aumentando el volumen de clientes en un 250%.</strong></p>
+      <p style="margin: 0 0 16px; font-size: 16px; text-wrap: pretty;">He estudiado música durante varios años y me encantan los deportes con pelota ⚽. En mi tiempo libre, juego ajedrez ♟️ y leo libros 📖.</p>
+      <p style="margin: 0 0 24px; font-size: 16px; font-style: italic;">Dato curioso: Me encantan las papas fritas 🍟</p>
+    </div>
+  </section>
+</main>
+
+<footer style="position: relative; z-index: 1; border-radius: 8px; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); background: rgba(0,0,0,0.2); backdrop-filter: blur(16px); width: 100%; max-width: 1120px; margin: 96px auto 40px; padding: 0 20px; box-sizing: border-box;">
+  <div style="width: 100%; margin: 0 auto; max-width: 1280px; display: flex; align-items: center; justify-content: space-between;">
+    <span style="font-size: 14px; color: rgba(254,240,138,0.6);">© 2026 <a href="https://anthony.pastor.dev" style="color: inherit;" style-hover="text-decoration: underline; color: inherit;">Anthony Pastor</a></span>
+    <ul style="display: flex; align-items: center; gap: 24px; margin: 0; padding: 0; list-style: none; font-weight: 500;">
+      <a href="#top" aria-label="home" style="position: relative; display: block; padding: 8px; transition: color .15s; font-size: 14px;">Inicio</a>
+      <a href="#experience" aria-label="experience" style="position: relative; display: block; padding: 8px; transition: color .15s; font-size: 14px;">Experiencia</a>
+      <a href="#projects" aria-label="projects" style="position: relative; display: block; padding: 8px; transition: color .15s; font-size: 14px;">Proyectos</a>
+      <a href="#about-me" aria-label="about-me" style="position: relative; display: block; padding: 8px; transition: color .15s; font-size: 14px;">Sobre mí</a>
+    </ul>
+  </div>
+</footer>
+</div>
+</x-dc>
+</body>
+</html>

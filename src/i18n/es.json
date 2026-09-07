@@ -1,8 +1,4 @@
 {
-	"seo": {
-		"title": "Portafolio de Anthony - Desarrollador de Software con +{{years}} años de experiencia",
-		"description": "Contrata a Anthony Pastor para construir tu sitio web o aplicación soñada. Desarrollador de software con más de 5 años de experiencia en la creación de sitios web modernos utilizando tecnologías de vanguardia."
-	},
 	"menu": {
 		"home": "Inicio",
 		"experience": "Experiencia",
@@ -10,44 +6,56 @@
 		"about-me": "Sobre mí"
 	},
 	"home": {
-		"name": "Hola, soy Anthony",
-		"status": {
-			"available": "Disponible"
-		},
-		"years_of_experience": "+{{years}} años de experiencia como Ingeniero de Software.",
-		"main_paragraph": "Desarrollador de Software Full Stack de Montevideo, Uruguay.",
-		"social": {
-			"linkedin": "LinkedIn",
-			"mail": "npastordominguez@gmail.com",
-			"download_cv": "CV"
-		}
+		"available": "Disponible para proyectos",
+		"greeting": "Hola, soy",
+		"hero_strong": "+{{years}} años de experiencia como Ingeniero de Software.",
+		"hero_rest": "Desarrollador Full Stack de Montevideo, Uruguay. Trabajo sobre todo en fintech y plataformas de gestión.",
+		"cta_work": "Trabajemos juntos",
+		"cta_cv": "Descargar CV"
+	},
+	"profile": {
+		"years_label": "años como Ingeniero de Software",
+		"base_label": "Base",
+		"base_value": "Montevideo, Uruguay",
+		"build_label": "Qué construyo",
+		"web_apps": "Web apps",
+		"mobile_apps": "Aplicaciones mobile",
+		"ecommerce": "E-commerce",
+		"mgmt_platforms": "Plataformas de gestión",
+		"build_note": "De la app al backoffice, punta a punta. Sobre todo en fintech, abierto a otros rubros.",
+		"products_label": "Productos en los que trabajé",
+		"amber_desc": "Plataforma de inversiones uruguaya",
+		"guesty_desc": "Sistema de gestión de propiedades israelí, con miles de empleados alrededor del mundo",
+		"fatsack_desc": "Aplicación mobile"
+	},
+	"stack": {
+		"subtitle": "las herramientas de todos los días"
 	},
 	"experience": {
 		"title": "Experiencia Laboral",
-		"at": "en",
+		"subtitle": "2019 — hoy",
+		"present": "Presente",
 		"work_1": {
 			"date": "Presente",
 			"title": "Desarrollador de Software",
-			"company": "Vangwe",
-			"description_1": "Colaboré en equipos de diseño y desarrollo de productos multinacionales. Experto en el ecosistema de JavaScript, con amplia experiencia en React.js y Node.js.",
-			"description_2": "Además, implementé integraciones con pasarelas de pago y servicios como AWS, Firebase y plataformas de redes sociales."
+			"company_at": "en Vangwe",
+			"paragraph_1": "Formé parte del equipo de <strong>Amber</strong>, plataforma de inversiones uruguaya, y de <strong>Guesty</strong>, sistema de gestión de propiedades israelí con miles de empleados alrededor del mundo. También desarrollé <strong>Fatsack</strong>, una aplicación mobile, además de e-commerce y plataformas de gestión.",
+			"paragraph_2": "Implementé integraciones con pasarelas de pago y servicios como AWS, Firebase y plataformas de redes sociales, colaborando en equipos de diseño y desarrollo de productos multinacionales."
 		},
 		"work_2": {
 			"date": "Agosto de 2022",
 			"title": "Desarrollador de Software",
-			"company": "Sicfe S.A",
-			"description_1": "Contribuí al desarrollo de un sistema de facturación electrónica para Paraguay, construido con el ecosistema .NET.",
-			"description_2": "Este rol full stack incluyó la implementación de integración continua con Azure Pipelines e interacciones con clientes para resolver preguntas y problemas."
+			"company_at": "en Sicfe S.A",
+			"paragraph_1": "Contribuí al desarrollo de un sistema de facturación electrónica para Paraguay, construido con el ecosistema .NET.",
+			"paragraph_2": "Este rol full stack incluyó la implementación de integración continua con Azure Pipelines e interacciones con clientes para resolver preguntas y problemas."
 		},
-		"work_3": {
-			"date": "Diciembre de 2019"
-		},
-		"status": {
-			"current": "Presente"
-		}
+		"origin": "Diciembre de 2019 · donde empezó todo",
+		"chip_payments": "Pasarelas de pago",
+		"chip_einvoicing": "Facturación electrónica"
 	},
 	"projects": {
 		"title": "Proyectos",
+		"subtitle": "seleccionados",
 		"links": {
 			"code": "Código",
 			"api": "API",
@@ -61,14 +69,30 @@
 		},
 		"proj_3": {
 			"description": "Proyecto de E-Commerce full stack replicando la tienda de Tesla. Este proyecto se completó como parte del curso DevTalles Next.js."
+		},
+		"alt": {
+			"artesania": "Captura del proyecto Artesanía Uruguay",
+			"coronato": "Captura del proyecto Marcelo Coronato Metalurgia",
+			"teslo": "Captura del proyecto Teslo Shop"
 		}
 	},
 	"about": {
 		"title": "Sobre mí",
-		"first_paragraph": "Mi nombre es Anthony Pastor, pero mis amigos me llaman Tony. Empecé a programar cuando ingresé a la universidad y desde entonces he estado desarrollando mis habilidades como desarrollador Full Stack 👨🏽‍💻.",
-		"second_paragraph": "He <strong>liderado equipos de desarrollo para sitios web del gobierno uruguayo</strong> y participado en empresas multinacionales. Algunos de mis éxitos incluyen:",
-		"third_paragraph": "• Participé en el diseño e implementación de herramientas que mejoraron los tiempos de homologación de clientes para Sicfe, <strong> reduciendo el proceso de 3 semanas a solo 3 días.</strong> <br /> <br /> • Mejoré la UI & UX de QR Manager, <strong> permitiendo eventos con más de 1000 personas.</strong> <br /><br /> • Creé la marca para una empresa metalúrgica, <strong> aumentando el volumen de clientes en un 250%.</strong>",
-		"fouth_paragraph": "He estudiado música durante varios años y me encantan los deportes con pelota ⚽. En mi tiempo libre, juego ajedrez ♟️ y leo libros 📖.",
-		"fifth_paragraph": "Dato curioso: Me encantan las papas fritas 🍟"
+		"subtitle": "Tony, para los amigos",
+		"paragraph_1": "Mi nombre es Anthony Pastor, pero mis amigos me llaman Tony. Empecé a programar cuando ingresé a la universidad y desde entonces he estado desarrollando mis habilidades como desarrollador Full Stack.",
+		"paragraph_2": "Los últimos años los pasé sobre todo en <strong>fintech y plataformas de gestión</strong>: inversiones, facturación electrónica, gestión de propiedades. También <strong>lideré equipos de desarrollo para sitios web del gobierno uruguayo</strong> y participé en empresas multinacionales.",
+		"paragraph_3": "Fintech es donde más cómodo me siento, pero estoy abierto a otros productos. He estudiado música durante varios años y me encantan los deportes con pelota. En mi tiempo libre, juego ajedrez y leo libros.",
+		"fun_fact": "Dato curioso: me encantan las papas fritas 🍟",
+		"highlight_amber": "<strong>Amber</strong> — formé parte del equipo de la plataforma de inversiones uruguaya.",
+		"highlight_guesty": "<strong>Guesty</strong> — sistema de gestión de propiedades israelí, con miles de empleados alrededor del mundo.",
+		"highlight_metal": "Creé la marca para una empresa metalúrgica, <strong>aumentando el volumen de clientes en un 250%.</strong>"
+	},
+	"contact": {
+		"title": "¿Tenés un proyecto en mente?",
+		"subtitle": "Escribime y lo charlamos. Respondo en menos de 24 horas.",
+		"mail_cta": "Escribime"
+	},
+	"footer": {
+		"location": "Montevideo, UY"
 	}
 }
